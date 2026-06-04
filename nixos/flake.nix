@@ -9,21 +9,29 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # declarative flatpak
-    declarative-flatpak = {
-      url = "github:in-a-dil-emma/declarative-flatpak/latest";
-      # inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
+    niri.url = "github:sodiboo/niri-flake";
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, declarative-flatpak, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.medo-workstation = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix                       # Your main configuration
-        # declarative-flatpak.nixosModules.default  # Declarative flatpak support
-        # ./modules/flatpak.nix                     # Separate flatpak module
-        home-manager.nixosModules.home-manager    # home manager support
-        ./modules/home-manager.nix                # separate home-manager module
+        ./configuration.nix                         # Your main configuration
+        home-manager.nixosModules.home-manager      # home manager support
+        ./modules/home-manager.nix                  # separate home-manager module
       ];
     };
   };

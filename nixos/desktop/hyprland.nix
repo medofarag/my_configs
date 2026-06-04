@@ -1,52 +1,46 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs,... }:
 
 {
-  programs.hyprland.enable = true;
-
-  services.displayManager.sddm = {
+  programs.hyprland = {
     enable = true;
-    wayland.enable = true;
-    theme = "breeze";
-    enableHidpi = true;
+    xwayland.enable = true;
   };
-
-  programs.dconf.profiles.user.databases = [
-    {
-      settings."org/gnome/desktop/interface" = {
-        gtk-theme = "breeze-gtk";
-        icon-theme = "Noto Sans Emoji";
-        font-name = "Noto Sans Medium 11";
-        document-font-name = "Noto Sans Medium 11";
-        monospace-font-name = "Noto Sans Mono Medium 11";
-      };
-    }
-  ];
 
   environment.systemPackages = with pkgs; [
     hyprpanel
     hyprpolkitagent
-    hyprlauncher
+    fuzzel
+    bemoji
     hyprlock
     hypridle
     awww
-    kitty
+    foot
     hyprnotify
-    hyprkeys
-    hyprcursor
     hyprpicker
     gpick
     hyprland-qtutils
     hyprshot
+    wl-clipboard
+    loupe
 
     # theme
     kdePackages.breeze
     kdePackages.breeze-gtk
     kdePackages.breeze-icons
+    qt6Packages.qt6ct
+    libsForQt5.qt5ct
+    nwg-look
+
+    adwaita-qt
+    adwaita-icon-theme
+    libadwaita
 
     # Essential apps
     pcmanfm
     xarchiver
     gnome-clocks
     ffmpegthumbnailer
+
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 }

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs,... }:
 
 {
   imports =
@@ -10,21 +10,32 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      # systemd services
-      ./services.nix
+      # Systemd services
+      ./system/services.nix
 
-      # systmed-units
-      ./systemd-units.nix
+      # Systmed-units
+      ./system/systemd-units.nix
 
-      # fail2ban & firewall
-      ./fail2ban-and-firewall.nix
+      # Fail2ban & Firewall
+      ./system/fail2ban-and-firewall.nix
 
       # Desktop
-      ./desktop/hyprland.nix
-      # ./desktop/sway.nix
-      # ./desktop/plasma.nix
-      # ./desktop/gnome.nix
-      # ./desktop/cinnamon.nix
+      ./desktop.nix
+
+      # Fonts
+      ./system/fonts.nix
+
+      # medo user settings
+      ./medo.nix
+
+      # developing
+      ./develop.nix
+
+      # gaming
+      ./gaming.nix
+
+      # virtualisation
+      ./system/virtualisation.nix
     ];
 
   # Bootloader.
@@ -92,29 +103,6 @@
   security.polkit.enable = true;
   hardware.graphics.enable = true;
 
-  fonts = {
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        monospace = [ "JetBrains Mono" "DejaVu Sans Mono" ];
-        sansSerif = [ "Noto Sans" "DejaVu Sans" ];
-        serif = [ "Noto Serif" "DejaVu Serif" ];
-      };
-    };
-    packages = with pkgs; [
-      font-awesome
-      noto-fonts-color-emoji
-      nerd-fonts.symbols-only
-      # noto-fonts-cjk-sans
-      # nerd-fonts.dejavu-sans-mono
-      unicode-emoji
-      liberation_ttf
-      noto-fonts
-      dejavu_fonts
-      jetbrains-mono
-    ];
-  };
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -143,32 +131,16 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.medo = {
-    isNormalUser = true;
-    description = "Mahmoud Farag";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "podman"];
-    packages = with pkgs; [
-      
-    ];
-  };
-
   nixpkgs.config.permittedInsecurePackages = [
-    "luanti-5.14.0"
+    # "luanti"
   ];
-
-  programs.steam = {
-    enable = true;
-    # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    # localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
     "steam-original"
     "steam-unwrapped"
     "steam-run"
+    "obsidian"
   ];
 
   # for data usage
@@ -184,35 +156,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
-
   environment.systemPackages = with pkgs; [
-    distrobox
-    lua 
-    # openjdk
-    # maven
-    # nodejs
-
     # media control
     playerctl
 
     # cli tools
     btop
-    bat
-    eza
-    ripgrep
-    fd
-    fzf
-    git
-    jq
     fastfetch
     vnstat
     nethogs
     tree-sitter
     libqalculate
+    zoxide
 
     ffmpeg
     unrar-free
@@ -229,26 +184,20 @@
     dosfstools
     xfsprogs
 
-    # wine
-    wine
-    winetricks
+    nix-search
+    wl-clipboard
+
+    # Local AI
+    # koboldcpp # AI
+    # ollama-rocm # AI
+    # lmstudio # AI
+    # sillytavern # AI Frontend
+    
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # enable flatpak
   services.flatpak.enable = true;
-
-  # virtmanager
-  programs.virt-manager.enable = true;
-
-  users.groups.libvirtd.members = ["medo"];
-
-  virtualisation.libvirtd.enable = true;
-
-  virtualisation.spiceUSBRedirection.enable = true;
-
-  virtualisation.libvirtd.qemu = {
-    swtpm.enable = true;
-  };
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

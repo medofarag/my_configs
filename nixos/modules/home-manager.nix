@@ -1,5 +1,5 @@
 # /etc/nixos/modules/home-manager.nix
-{ config, pkgs, ... }:
+{ config, pkgs, lib, inputs,... }:
 
 {
   home-manager = {
@@ -7,6 +7,6 @@
     useUserPackages = true;
     
     # user settings from separated file
-    users.medo = import ../home/medo/home.nix;
+    users.medo = import ../home/home.nix;
   };
 }

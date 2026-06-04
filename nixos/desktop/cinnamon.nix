@@ -1,14 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   # Enable Cinnamon
   services.xserver.desktopManager.cinnamon.enable = true;
 
   # Enable lightdm displayManager
-  services.displayManager.lightdm = {
-    enable = true;  
-  };
-
   environment.cinnamon.excludePackages = [
     pkgs.blueman
   ];

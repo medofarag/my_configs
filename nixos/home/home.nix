@@ -3,9 +3,11 @@
 
 {
   imports = [
-    ./packages.nix
     ./programs/git.nix
     ./programs/starship.nix
+    ./programs/foot.nix
+    ./office.nix
+    ./packages.nix
   ];
 
   home.username = "medo";
@@ -13,4 +15,5 @@
   home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
+
 }

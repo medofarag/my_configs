@@ -1,10 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  services.displayManager.ly = {
-    enable = true;
-  };
-
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
@@ -27,11 +23,8 @@
       flameshot
       gpick
       ffmpegthumbnailer
-      qt6Packages.qt6ct
-      libsForQt5.qt5ct
-      nwg-look
       libappimage
-      kdePackages.gwenview
+      loupe
       polkit_gnome
 
       # Themes
@@ -39,6 +32,12 @@
       kdePackages.breeze-gtk
       kdePackages.breeze-icons
       kdePackages.breeze-grub
+      qt6Packages.qt6ct
+      libsForQt5.qt5ct
+      nwg-look
+      adwaita-qt
+      adwaita-icon-theme
+      libadwaita
     ];
   };
 }
