@@ -3,7 +3,6 @@
 {
   users.users.medo = {
     packages = with pkgs; [
-      # Games
       luanti
       # supertux
       # supertuxkart
@@ -11,7 +10,7 @@
       # beyond-all-reason
       # 0ad
       # redeclipse
-      # sauerbraten
+      sauerbraten
       # frogatto
       # gzdoom
       extremetuxracer

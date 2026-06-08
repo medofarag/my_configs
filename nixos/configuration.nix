@@ -11,19 +11,16 @@
       ./hardware-configuration.nix
 
       # Systemd services
-      ./system/services.nix
+      ./services.nix
 
-      # Systmed-units
-      ./system/systemd-units.nix
-
-      # Fail2ban & Firewall
-      ./system/fail2ban-and-firewall.nix
+      # virtualisation
+      ./virtualisation.nix
 
       # Desktop
       ./desktop.nix
 
       # Fonts
-      ./system/fonts.nix
+      ./fonts.nix
 
       # medo user settings
       ./medo.nix
@@ -34,8 +31,8 @@
       # gaming
       ./gaming.nix
 
-      # virtualisation
-      ./system/virtualisation.nix
+      # office
+      ./office.nix
     ];
 
   # Bootloader.
@@ -57,9 +54,6 @@
   };
 
   # Use latest kernel.
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Use zen kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   
   networking.hostName = "nixos"; # Define your hostname.
@@ -98,7 +92,7 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
 
   security.polkit.enable = true;
   hardware.graphics.enable = true;
@@ -141,6 +135,7 @@
     "steam-unwrapped"
     "steam-run"
     "obsidian"
+    "sauerbraten"
   ];
 
   # for data usage
@@ -169,12 +164,15 @@
     libqalculate
     zoxide
 
+    wireplumber 
+
     ffmpeg
     unrar-free
     zip
     unzip
     gvfs
     udisks2
+    udev
 
     # Disk
     gparted
@@ -186,14 +184,6 @@
 
     nix-search
     wl-clipboard
-
-    # Local AI
-    # koboldcpp # AI
-    # ollama-rocm # AI
-    # lmstudio # AI
-    # sillytavern # AI Frontend
-    
-    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # enable flatpak

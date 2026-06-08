@@ -1,28 +1,30 @@
 { config, pkgs, lib, inputs,... }:
 
 {
-  programs.hyprland = {
+  programs.niri = {
     enable = true;
-    xwayland.enable = true;
+    # xwayland.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
-    hyprpanel
     hyprpolkitagent
     fuzzel
     bemoji
     walker
     elephant
     hyprlock
+    flameshot
     hypridle
     awww
     foot
     hyprnotify
-    hyprpicker
     gpick
-    hyprland-qtutils
     wl-clipboard
     loupe
+
+    xwayland
+    xwayland-satellite
+    xwayland-run
 
     # theme
     kdePackages.breeze

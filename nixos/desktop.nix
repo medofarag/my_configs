@@ -4,6 +4,7 @@
   imports = [
     # desktop
     ./desktop/hyprland.nix
+    ./desktop/niri.nix
     # ./desktop/sway.nix
     # ./desktop/plasma.nix
     # ./desktop/gnome.nix

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -13,6 +13,17 @@
       asciiquarium
       haruna
       kdePackages.elisa
+      ascii
+
+      # Local AI
+      # koboldcpp # AI
+      # ollama-rocm # AI
+      # lmstudio
+
+      # kdePackages.filelight
+      # blanket
+      # element-desktop 
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
   programs.fish.enable = true;

@@ -7,6 +7,6 @@
     useUserPackages = true;
     
     # user settings from separated file
-    users.medo = import ../home/home.nix;
+    # users.medo = import ../home/home.nix;
   };
 }
