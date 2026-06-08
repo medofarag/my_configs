@@ -15,9 +15,7 @@
     hyprlock
     flameshot
     hypridle
-    awww
     foot
-    hyprnotify
     gpick
     wl-clipboard
     loupe

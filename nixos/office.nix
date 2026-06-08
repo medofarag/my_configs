@@ -11,12 +11,11 @@
     # tesseract
     # yt-dlp
     obsidian
+    # super-productivity
     planify
     pdfarranger
     openboard
     # paperless-ngx # document manager
-    # super-productivity
-    # appflowy # notion alternative
     # zotero
     # drawio
     localsend
