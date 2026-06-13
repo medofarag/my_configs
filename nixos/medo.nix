@@ -20,8 +20,8 @@
       # ollama-rocm # AI
       # lmstudio
 
+      # yt-dlp
       # kdePackages.filelight
-      # blanket
       # element-desktop 
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];

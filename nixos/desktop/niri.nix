@@ -7,14 +7,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    hyprpolkitagent
-    fuzzel
-    bemoji
-    walker
-    elephant
-    hyprlock
     flameshot
-    hypridle
     foot
     gpick
     wl-clipboard
@@ -39,9 +32,16 @@
     # Essential apps
     pcmanfm
     xarchiver
-    gnome-clocks
     ffmpegthumbnailer
 
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    configPackages = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = "gtk";
+  };
 }

@@ -3,6 +3,7 @@
 {
   imports = 
     [
-      ./services/fail2ban-and-firewall.nix
+      ./services/fail2ban.nix
+      ./services/firewall.nix
     ];
 }

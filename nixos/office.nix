@@ -9,18 +9,13 @@
     onlyoffice-desktopeditors
     proton-vpn
     # tesseract
-    # yt-dlp
     obsidian
     # super-productivity
-    planify
     pdfarranger
-    openboard
     # paperless-ngx # document manager
     # zotero
-    # drawio
     localsend
-    kdePackages.kolourpaint
-    # pinta
+    pinta
     kdePackages.okular
     mousepad
     kdePackages.kasts

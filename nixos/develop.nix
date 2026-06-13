@@ -9,7 +9,6 @@
     rustc
     cargo
 
-
     bat
     eza
     ripgrep

@@ -1,28 +1,22 @@
 { config, pkgs, lib, ... }:
 
 {
-  users.users.medo = {
-    packages = with pkgs; [
-      luanti
-      # supertux
-      # supertuxkart
-      # xonotic
-      # beyond-all-reason
-      # 0ad
-      # redeclipse
-      sauerbraten
-      # frogatto
-      # gzdoom
-      extremetuxracer
-      neverball
-      # bugdom
-    ];
-  };
-
   environment.systemPackages = with pkgs; [    
-    # wine
     wine
     winetricks
+    luanti
+    # supertux
+    # supertuxkart
+    # xonotic
+    # beyond-all-reason
+    # 0ad
+    # redeclipse
+    # frogatto
+    # gzdoom
+    extremetuxracer
+    neverball
+    # bugdom
+    # en-croissant # Chess
   ];
 
   programs.steam = {

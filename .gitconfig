@@ -1,0 +1,10 @@
+[user]
+	mail = medofarag@proton.me
+	name = Mahmoud Farag
+	email = medofarag@proton.me
+[core]
+	editor = nvim
+[credential]
+	helper = cache
+[init]
+	defaultBranch = main

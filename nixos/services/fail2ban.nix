@@ -29,12 +29,4 @@
     # 5. Time window during which attempts are counted (findtime = 10 minutes)
     # (findtime is not directly available as a global option, but can be set within each individual "jail")
   };
-
-  # Enable firewall
-  networking.firewall = {
-    enable = true;
-    # Open ports in the firewall.
-    allowedTCPPorts = [ 22 80 8888 ]; # ssh http searxng
-    # allowedUDPPorts = [ ];
-  };
 }

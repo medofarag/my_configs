@@ -122,6 +122,9 @@
     #media-session.enable = true;
   };
 
+  # Enable gvfs
+  services.gvfs.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -135,7 +138,7 @@
     "steam-unwrapped"
     "steam-run"
     "obsidian"
-    "sauerbraten"
+    "frogatto"
   ];
 
   # for data usage
@@ -170,9 +173,9 @@
     unrar-free
     zip
     unzip
-    gvfs
-    udisks2
-    udev
+    # gvfs
+    # udisks2
+    # udev
 
     # Disk
     gparted
