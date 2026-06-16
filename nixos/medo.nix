@@ -8,21 +8,22 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "podman"];
     shell = pkgs.fish;
     packages = with pkgs; [
+      libqalculate
+      fsearch
       oh-my-fish
       cmatrix
       asciiquarium
       haruna
       kdePackages.elisa
       ascii
-
-      # Local AI
-      # koboldcpp # AI
-      # ollama-rocm # AI
-      # lmstudio
-
-      # yt-dlp
-      # kdePackages.filelight
-      # element-desktop 
+      ventoy-full
+      proton-vpn
+      lmstudio
+      yt-dlp
+      kdePackages.filelight
+      element-desktop
+      gajim
+      telegram-desktop
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };

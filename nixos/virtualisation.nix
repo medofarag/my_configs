@@ -8,6 +8,8 @@
 
   environment.systemPackages = with pkgs; [
     distrobox
+    guestfs-tools
+    virtiofsd
   ];
 
   # waydroid

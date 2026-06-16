@@ -2,21 +2,17 @@
 
 {
   environment.systemPackages = with pkgs; [
-    fsearch
     # sage
-    # octave
-    # libreoffice
+    octave
+    libreoffice
     onlyoffice-desktopeditors
-    proton-vpn
+    kdePackages.okular
+    pdfarranger
     # tesseract
     obsidian
-    # super-productivity
-    pdfarranger
-    # paperless-ngx # document manager
     # zotero
     localsend
     pinta
-    kdePackages.okular
     mousepad
     kdePackages.kasts
   ];

@@ -3,7 +3,6 @@
 {
   programs.niri = {
     enable = true;
-    # xwayland.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -13,9 +12,7 @@
     wl-clipboard
     loupe
 
-    xwayland
     xwayland-satellite
-    xwayland-run
 
     # theme
     kdePackages.breeze
@@ -24,10 +21,6 @@
     qt6Packages.qt6ct
     libsForQt5.qt5ct
     nwg-look
-
-    adwaita-qt
-    adwaita-icon-theme
-    libadwaita
 
     # Essential apps
     pcmanfm

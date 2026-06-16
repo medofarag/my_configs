@@ -8,14 +8,10 @@
     # supertux
     # supertuxkart
     # xonotic
-    # beyond-all-reason
+    beyond-all-reason
     # 0ad
     # redeclipse
-    # frogatto
-    # gzdoom
-    extremetuxracer
     neverball
-    # bugdom
     # en-croissant # Chess
   ];
 
@@ -25,4 +21,11 @@
     # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     # localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
+  nixpkgs.overlays = [
+    (final: prev: {
+      steam = prev.steam.override {
+        extraArgs = "-cef-disable-gpu-compositing"; # أو استخدم "-system-composer"
+      };
+    })
+  ];
 }
