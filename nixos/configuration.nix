@@ -94,8 +94,7 @@
   hardware.graphics.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    # "luanti"
-    "ventoy-1.1.12"
+    # "ventoy-1.1.12"
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -104,8 +103,8 @@
     "steam-unwrapped"
     "steam-run"
     "obsidian"
-    "lmstudio"
-    "ventoy"
+    "vista-fonts"
+    "corefonts"
   ];
 
   # Install neovim

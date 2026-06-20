@@ -5,14 +5,13 @@
     wine
     winetricks
     luanti
-    # supertux
+    supertux
     # supertuxkart
     # xonotic
-    beyond-all-reason
     # 0ad
-    # redeclipse
+    redeclipse
     neverball
-    # en-croissant # Chess
+    en-croissant # Chess
   ];
 
   programs.steam = {

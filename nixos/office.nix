@@ -8,7 +8,7 @@
     onlyoffice-desktopeditors
     kdePackages.okular
     pdfarranger
-    # tesseract
+    tesseract
     obsidian
     # zotero
     localsend

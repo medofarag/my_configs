@@ -10,15 +10,14 @@
     packages = with pkgs; [
       libqalculate
       fsearch
+      qbittorrent
       oh-my-fish
       cmatrix
       asciiquarium
       haruna
       kdePackages.elisa
       ascii
-      ventoy-full
       proton-vpn
-      lmstudio
       yt-dlp
       kdePackages.filelight
       element-desktop

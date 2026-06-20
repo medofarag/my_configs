@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs,... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   programs.niri = {
@@ -28,6 +28,7 @@
     ffmpegthumbnailer
 
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    gpu-screen-recorder # needed by noctlia by plugin for screen recording 
   ];
 
   xdg.portal = {

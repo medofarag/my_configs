@@ -6,9 +6,10 @@
     # openjdk
     # maven
     # nodejs
+    helix
+    sqlite
     rustc
     cargo
-
     bat
     eza
     ripgrep
