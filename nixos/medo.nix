@@ -17,6 +17,7 @@
       haruna
       kdePackages.elisa
       ascii
+      ventoy-full
       proton-vpn
       yt-dlp
       kdePackages.filelight

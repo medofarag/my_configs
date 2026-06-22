@@ -2,7 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    lua 
+    lua
+    python313
+    python313Packages.pip
+    ollama
+    python313Packages.ollama
     # openjdk
     # maven
     # nodejs

@@ -6,7 +6,7 @@
     winetricks
     luanti
     supertux
-    # supertuxkart
+    supertuxkart
     # xonotic
     # 0ad
     redeclipse
