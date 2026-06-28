@@ -14,12 +14,10 @@
       oh-my-fish
       cmatrix
       asciiquarium
-      haruna
-      kdePackages.elisa
+      vlc
       ascii
-      ventoy-full
-      proton-vpn
       yt-dlp
+      lolcat
       kdePackages.filelight
       element-desktop
       gajim

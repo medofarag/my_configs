@@ -4,16 +4,11 @@
   environment.systemPackages = with pkgs; [
     lua
     python313
-    python313Packages.pip
-    ollama
     python313Packages.ollama
-    # openjdk
-    # maven
-    # nodejs
-    helix
+    openjdk
+    maven
+    nodejs
     sqlite
-    rustc
-    cargo
     bat
     eza
     ripgrep
@@ -23,4 +18,10 @@
     jq
     tmux
   ];
+
+  services.ollama = {
+    enable = true;
+    # Optional: preload models, see https://ollama.com/library
+    # loadModels = [ "llama3.2:3b" "deepseek-r1:1.5b"];
+  };
 }

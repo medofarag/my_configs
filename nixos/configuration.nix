@@ -94,7 +94,7 @@
   hardware.graphics.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
-    "ventoy-1.1.12"
+    "luanti-5.14.0"
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
@@ -105,8 +105,26 @@
     "obsidian"
     "vista-fonts"
     "corefonts"
-    "ventoy"
-    "open-webui"
+  ];
+
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+  programs.appimage.package = pkgs.appimage-run.override { 
+    extraPkgs = pkgs: [
+      pkgs.python312
+    ]; 
+  };
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+    libX11
+    libXcursor
+    libXi
+    libXrandr
+    libGL
+    gtk3
+    harfbuzzFull
   ];
 
   # Install neovim

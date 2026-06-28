@@ -3,14 +3,15 @@
 {
   imports = 
     [
-      ./services/fail2ban.nix
+      # ./services/fail2ban.nix
       ./services/firewall.nix
       ./services/openssh.nix
       ./services/audio.nix
       ./services/xserver.nix
-      ./services/papperless.nix
-      ./services/searxng.nix
+      # ./services/papperless.nix
+      # ./services/searxng.nix
       ./services/syncthing.nix
+      # ./services/immich.nix
     ];
 
   services.vnstat.enable = true;

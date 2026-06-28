@@ -1,6 +1,11 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
+  imports = 
+    [
+      ./shells/dank.nix
+    ];
+
   programs.niri = {
     enable = true;
   };
@@ -28,7 +33,6 @@
     xarchiver
     ffmpegthumbnailer
 
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     gpu-screen-recorder # needed by noctlia by plugin for screen recording 
   ];
 

@@ -2,7 +2,7 @@
 
 {
   services.searx = {
-    enable = false;
+    enable = true;
     redisCreateLocally = true;
     settings.server = {
       bind_address = "127.0.0.1";

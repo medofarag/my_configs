@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # sage
+    sage
     octave
     libreoffice
     onlyoffice-desktopeditors

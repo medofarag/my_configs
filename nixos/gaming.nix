@@ -5,13 +5,9 @@
     wine
     winetricks
     luanti
-    supertux
-    supertuxkart
     # xonotic
     # 0ad
-    redeclipse
     neverball
-    en-croissant # Chess
   ];
 
   programs.steam = {
@@ -23,7 +19,7 @@
   nixpkgs.overlays = [
     (final: prev: {
       steam = prev.steam.override {
-        extraArgs = "-cef-disable-gpu-compositing"; # أو استخدم "-system-composer"
+        extraArgs = "-cef-disable-gpu-compositing";
       };
     })
   ];

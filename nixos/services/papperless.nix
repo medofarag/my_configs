@@ -3,7 +3,7 @@
 {
   environment.etc."paperless-admin-pass".text = "admin";
   services.paperless = {
-    enable = false;
+    enable = true;
     passwordFile = "/etc/paperless-admin-pass";
   };
 }
