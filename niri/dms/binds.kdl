@@ -1,0 +1,3 @@
+binds {
+    Super+B hotkey-overlay-title="open the browser: Zen Browser" { spawn "spawn-sh" "zen-beta"; }
+}

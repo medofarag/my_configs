@@ -38,11 +38,11 @@
   # Bootloader.
   boot.loader = {
     systemd-boot = {
-      enable = false;
+      enable = true;
     }; 
 
     grub = {
-      enable = true;
+      enable = false;
       efiSupport = true;
       device = "nodev";
       # theme = pkgs.kdePackages.breeze-grub;
@@ -91,6 +91,8 @@
   };
 
   security.polkit.enable = true;
+  security.sudo.enable = false;
+  security.doas.enable = true;
   hardware.graphics.enable = true;
 
   nixpkgs.config.permittedInsecurePackages = [
@@ -135,6 +137,9 @@
   # $ nix search wget
 
   environment.systemPackages = with pkgs; [
+
+    doas-sudo-shim
+
     # media control
     playerctl
 

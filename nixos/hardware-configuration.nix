@@ -19,11 +19,6 @@
       options = [ "subvol=@" ];
     };
 
-  fileSystems."/MIX" =
-    { device = "/dev/disk/by-uuid/d4848c73-f7dd-4d1b-9190-38b17119663f";
-      fsType = "btrfs";
-    };
-
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/7381-1F19";
       fsType = "vfat";

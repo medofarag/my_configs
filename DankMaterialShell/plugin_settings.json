@@ -1,0 +1,22 @@
+{
+  "prayerTimes": {
+    "enabled": false,
+    "method": "5",
+    "refreshInterval": "5",
+    "lat": "30.6085888",
+    "lon": "31.5490304",
+    "iconOnly": false,
+    "showSeconds": false,
+    "use12H": false
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "stopwatch": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  }
+}
