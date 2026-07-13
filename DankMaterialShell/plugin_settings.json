@@ -1,11 +1,11 @@
 {
   "prayerTimes": {
-    "enabled": false,
+    "enabled": true,
     "method": "5",
     "refreshInterval": "5",
     "lat": "30.6085888",
     "lon": "31.5490304",
-    "iconOnly": false,
+    "iconOnly": true,
     "showSeconds": false,
     "use12H": false
   },
@@ -18,5 +18,16 @@
   "calculator": {
     "enabled": true,
     "trigger": "="
+  },
+  "screenCaptureToolbar": {
+    "enabled": true,
+    "stdout": true,
+    "captureMode": "monitor",
+    "videoMonitor": "Focused",
+    "swapCaptureKeys": true,
+    "pipeCommand": "pinta",
+    "videoQuality": "high",
+    "videoFPS": "30",
+    "videoFormat": "mp4"
   }
 }

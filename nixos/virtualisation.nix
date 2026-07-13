@@ -11,7 +11,7 @@
     guestfs-tools
     virtiofsd
   ];
-
+  
   # virtmanager
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["medo"];

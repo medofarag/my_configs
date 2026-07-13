@@ -4,7 +4,7 @@
   "customThemeFile": "",
   "registryThemeVariants": {},
   "matugenScheme": "scheme-tonal-spot",
-  "runUserMatugenTemplates": true,
+  "runUserMatugenTemplates": false,
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
   "dockTransparency": 1,
@@ -42,7 +42,7 @@
   "blurBorderColor": "outline",
   "blurBorderCustomColor": "#ffffff",
   "blurBorderOpacity": 0.35,
-  "wallpaperFillMode": "Fit",
+  "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
   "blurWallpaperOnOverview": false,
   "showLauncherButton": true,
@@ -99,11 +99,6 @@
       "width": 50
     },
     {
-      "id": "bluetooth",
-      "enabled": true,
-      "width": 50
-    },
-    {
       "id": "audioOutput",
       "enabled": true,
       "width": 50
@@ -114,12 +109,7 @@
       "width": 50
     },
     {
-      "id": "nightMode",
-      "enabled": true,
-      "width": 50
-    },
-    {
-      "id": "darkMode",
+      "id": "builtin_vpn",
       "enabled": true,
       "width": 50
     }
@@ -249,7 +239,7 @@
   "batterySuspendBehavior": 0,
   "batteryProfileName": "",
   "batteryChargeLimit": 100,
-  "lockBeforeSuspend": false,
+  "lockBeforeSuspend": true,
   "loginctlLockIntegration": true,
   "fadeToLockEnabled": true,
   "fadeToLockGracePeriod": 5,
@@ -269,29 +259,29 @@
   "muxUseCustomCommand": false,
   "muxCustomCommand": "",
   "muxSessionFilter": "",
-  "runDmsMatugenTemplates": true,
-  "matugenTemplateGtk": true,
-  "matugenTemplateNiri": true,
-  "matugenTemplateHyprland": true,
-  "matugenTemplateMangowc": true,
-  "matugenTemplateQt5ct": true,
-  "matugenTemplateQt6ct": true,
-  "matugenTemplateFirefox": true,
-  "matugenTemplatePywalfox": true,
+  "runDmsMatugenTemplates": false,
+  "matugenTemplateGtk": false,
+  "matugenTemplateNiri": false,
+  "matugenTemplateHyprland": false,
+  "matugenTemplateMangowc": false,
+  "matugenTemplateQt5ct": false,
+  "matugenTemplateQt6ct": false,
+  "matugenTemplateFirefox": false,
+  "matugenTemplatePywalfox": false,
   "matugenTemplateZenBrowser": true,
-  "matugenTemplateVesktop": true,
-  "matugenTemplateEquibop": true,
-  "matugenTemplateGhostty": true,
-  "matugenTemplateKitty": true,
+  "matugenTemplateVesktop": false,
+  "matugenTemplateEquibop": false,
+  "matugenTemplateGhostty": false,
+  "matugenTemplateKitty": false,
   "matugenTemplateFoot": true,
-  "matugenTemplateAlacritty": true,
+  "matugenTemplateAlacritty": false,
   "matugenTemplateNeovim": false,
-  "matugenTemplateWezterm": true,
-  "matugenTemplateDgop": true,
-  "matugenTemplateKcolorscheme": true,
-  "matugenTemplateVscode": true,
-  "matugenTemplateEmacs": true,
-  "matugenTemplateZed": true,
+  "matugenTemplateWezterm": false,
+  "matugenTemplateDgop": false,
+  "matugenTemplateKcolorscheme": false,
+  "matugenTemplateVscode": false,
+  "matugenTemplateEmacs": false,
+  "matugenTemplateZed": false,
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
@@ -327,7 +317,7 @@
   "lockScreenShowTime": false,
   "lockScreenShowDate": false,
   "lockScreenShowProfileImage": false,
-  "lockScreenShowPasswordField": true,
+  "lockScreenShowPasswordField": false,
   "lockScreenShowMediaPlayer": false,
   "lockScreenPowerOffMonitorsOnLock": false,
   "lockAtStartup": false,
@@ -410,17 +400,12 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
-          "id": "powerMenuButton",
-          "enabled": true
-        },
-        {
           "id": "workspaceSwitcher",
           "enabled": true
         },
         {
-          "id": "focusedWindow",
-          "enabled": true,
-          "focusedWindowCompactMode": true
+          "id": "colorPicker",
+          "enabled": true
         }
       ],
       "centerWidgets": [
@@ -435,17 +420,29 @@
           "enabled": true
         },
         {
-          "id": "keyboard_layout_name",
+          "id": "prayerTimes",
           "enabled": true
+        },
+        {
+          "id": "keyboard_layout_name",
+          "enabled": true,
+          "keyboardLayoutNameCompactMode": false
         },
         {
           "id": "memUsage",
           "enabled": true,
-          "minimumWidth": true
+          "minimumWidth": true,
+          "showSwap": false
         },
         {
           "id": "controlCenterButton",
-          "enabled": true
+          "enabled": true,
+          "showBluetoothIcon": false,
+          "showAudioIcon": true,
+          "showAudioPercent": true,
+          "showBrightnessIcon": false,
+          "showBrightnessPercent": false,
+          "showMicPercent": false
         },
         {
           "id": "clock",
@@ -466,7 +463,7 @@
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
       "removeWidgetPadding": false,
-      "widgetPadding": 4,
+      "widgetPadding": 6,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,

@@ -10,10 +10,8 @@
     pdfarranger
     tesseract
     obsidian
-    # zotero
     localsend
     pinta
-    mousepad
     kdePackages.kasts
   ];
 }

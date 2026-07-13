@@ -23,9 +23,9 @@ set $term foot
 # Your preferred application launcher
 set $menu fuzzel
 set $filemanager pcmanfm
-set $texteditor kwrite
+set $texteditor mousepad
 set $emojiselector bemoji
-set $browser librewolf
+set $browser zen-beta
 set $screenlocker swaylock
 ### Output configuration
 #

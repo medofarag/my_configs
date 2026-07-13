@@ -4,7 +4,6 @@
   imports = [
     # desktop
     ./desktop/niri.nix
-    # ./desktop/sway.nix
 
     # DisplayManager
     # ./desktop/displayManager/lightdm.nix

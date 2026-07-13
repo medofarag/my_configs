@@ -271,8 +271,6 @@ window-rule {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "xwayland-satellite"
-// spawn-at-startup "waybar"
-// spawn-at-startup "awww-daemon"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -367,15 +365,14 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+D hotkey-overlay-title="Run an Application: DMS Launcher" { spawn-sh "dms ipc launcher toggle"; }
-    Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn-sh "dms ipc lock lock"; }
+    Mod+D hotkey-overlay-title="Run an Application: dms-launcher" { spawn-sh "dms ipc launcher toggle"; }
+    Super+L hotkey-overlay-title="Lock the Screen: dms-lock" { spawn-sh "dms ipc lock lock"; }
     Super+Ctrl+V hotkey-overlay-title="Clipboard history: dms-clipboard" { spawn-sh "dms ipc clipboard open"; }
     Super+E hotkey-overlay-title="open the filemanager: pcmanfm" { spawn "pcmanfm"; }
     Super+B hotkey-overlay-title="open the browser: Zen Browser" { spawn-sh "zen-beta"; }
-    Super+Ctrl+P hotkey-overlay-title="open powermenu" { spawn-sh "dms ipc powermenu toggle"; }
 
     // flameshot
-    Super+Ctrl+S hotkey-overlay-title="screenCaptureToolbar" { spawn-sh "dms ipc call screenCaptureToolbar toggle"; }
+    Super+Ctrl+S hotkey-overlay-title="take a screenshot for a specific rectangle region: flameshot" { spawn-sh "flameshot gui"; }
     Print hotkey-overlay-title="take a full screen shot" { spawn-sh "noctalia msg screenshot-fullscreen"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -647,5 +644,3 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 include "dms/binds.kdl"
-
-include "dms/cursor.kdl"

@@ -38,11 +38,11 @@
   # Bootloader.
   boot.loader = {
     systemd-boot = {
-      enable = true;
+      enable = false;
     }; 
 
     grub = {
-      enable = false;
+      enable = true;
       efiSupport = true;
       device = "nodev";
       # theme = pkgs.kdePackages.breeze-grub;
@@ -56,7 +56,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "medo"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -86,24 +86,27 @@
 
   environment = {
     sessionVariables = {
-      QT_QPA_PLATFORMTHEME = "qt5ct";
+      QT_QPA_PLATFORMTHEME = "qt6ct";
     };
   };
+
+  nix.settings.require-sigs = true;
+  boot.kernel.sysctl."kernel.kptr_restart" = 1;
 
   security.polkit.enable = true;
   security.sudo.enable = false;
   security.doas.enable = true;
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   nixpkgs.config.permittedInsecurePackages = [
     "luanti-5.14.0"
+    "electron-39.8.10"
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-unwrapped"
-    "steam-run"
     "obsidian"
     "vista-fonts"
     "corefonts"
@@ -129,13 +132,12 @@
     harfbuzzFull
   ];
 
-  # Install neovim
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
+  programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
+  
   environment.systemPackages = with pkgs; [
 
     doas-sudo-shim

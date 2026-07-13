@@ -1,10 +1,9 @@
 { config, pkgs, lib, inputs, ... }:
 
 {
-  imports = 
-    [
-      ./shells/dank.nix
-    ];
+  imports = [
+    ./shells/dms.nix
+  ];
 
   programs.niri = {
     enable = true;
@@ -17,7 +16,7 @@
     gpick
     wl-clipboard
     loupe
-
+    
     xwayland-satellite
 
     # theme
@@ -25,6 +24,7 @@
     kdePackages.breeze-gtk
     kdePackages.breeze-icons
     qt6Packages.qt6ct
+    kdePackages.qt6ct
     libsForQt5.qt5ct
     nwg-look
 
@@ -32,8 +32,7 @@
     pcmanfm
     xarchiver
     ffmpegthumbnailer
-
-    gpu-screen-recorder # needed by noctlia by plugin for screen recording 
+    libappimage
   ];
 
   xdg.portal = {

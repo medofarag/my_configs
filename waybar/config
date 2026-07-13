@@ -8,7 +8,7 @@
   "margin-right": 3,
   "margin-left": 3,
   "modules-left": [
-    "sway/workspaces",
+    "niri/workspaces",
     "sway/mode"
   ],
   "modules-center": [
@@ -20,7 +20,7 @@
     "pulseaudio",
     "clock"
   ],
-  "sway/language": {
+  "niri/language": {
   "format": "{}",
   "tooltip-format" : "{}",
   "format-en": "US",
@@ -42,9 +42,9 @@
     }
   },
   "network": {
-    "format-wifi": " {bandwidthDownBits}",
-    "format-ethernet": " {bandwidthDownBits}",
-    "format-disconnected": "󰤮 No Network",
+    "format-wifi": "   {bandwidthDownBits}",
+    "format-ethernet": "   {bandwidthDownBits}",
+    "format-disconnected": "󰤮   No Network",
     "interval": 5,
     "tooltip": false
   },

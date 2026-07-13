@@ -8,7 +8,9 @@
       layout = "us";
       variant = "";
     };
-
+    videoDrivers = [
+      "modesetting"
+    ];
     # Enable touchpad support (enabled default in most desktopManager).
     # libinput.enable = true;
   };
