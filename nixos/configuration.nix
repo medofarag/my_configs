@@ -107,6 +107,7 @@
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "mongodb"
     "obsidian"
     "vista-fonts"
     "corefonts"
@@ -128,6 +129,7 @@
     libXi
     libXrandr
     libGL
+    libxml2
     gtk3
     harfbuzzFull
   ];
@@ -152,8 +154,6 @@
     nethogs
     tree-sitter
     zoxide
-
-    wireplumber 
 
     ffmpeg
     unrar-free

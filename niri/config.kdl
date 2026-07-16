@@ -375,8 +375,8 @@ binds {
     Super+Ctrl+P hotkey-overlay-title="open powermenu" { spawn-sh "dms ipc powermenu toggle"; }
 
     // flameshot
-    Super+Ctrl+S hotkey-overlay-title="screenCaptureToolbar" { spawn-sh "dms ipc call screenCaptureToolbar toggle"; }
-    Print hotkey-overlay-title="take a full screen shot" { spawn-sh "noctalia msg screenshot-fullscreen"; }
+    Super+Ctrl+S hotkey-overlay-title="flameshot" { spawn-sh "flameshot gui"; }
+    Print hotkey-overlay-title="take a full screen shot" { spawn-sh "flameshot full"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

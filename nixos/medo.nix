@@ -9,14 +9,12 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       libqalculate
-      notepad-next
-      gpu-screen-recorder
+      wf-recorder
       flameshot
       superfile
       fsearch
       keepassxc
       proton-vpn
-      qbittorrent
       oh-my-fish
       cmatrix
       asciiquarium

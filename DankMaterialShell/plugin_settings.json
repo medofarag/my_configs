@@ -20,14 +20,26 @@
     "trigger": "="
   },
   "screenCaptureToolbar": {
-    "enabled": true,
-    "stdout": true,
+    "enabled": false,
+    "stdout": false,
     "captureMode": "monitor",
     "videoMonitor": "Focused",
-    "swapCaptureKeys": true,
-    "pipeCommand": "pinta",
+    "swapCaptureKeys": false,
+    "pipeCommand": "",
     "videoQuality": "high",
     "videoFPS": "30",
-    "videoFormat": "mp4"
+    "videoFormat": "mp4",
+    "videoCustomPath": "",
+    "enableEditorShortcut": false,
+    "recPillScreenName": "DP-2",
+    "recPillX": 976,
+    "recPillY": 12
+  },
+  "screenRecorderX": {
+    "enabled": true,
+    "langIndex": 1,
+    "framerateIndex": 1,
+    "qualityIndex": 1,
+    "recordAudio": true
   }
 }
