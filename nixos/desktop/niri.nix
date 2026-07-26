@@ -11,9 +11,8 @@
 
   environment.systemPackages = with pkgs; [
     flameshot
-    hyprpolkitagent
     foot
-    gpick
+    hyprpolkitagent
     wl-clipboard
     loupe
     

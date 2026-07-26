@@ -20,7 +20,7 @@
     "trigger": "="
   },
   "screenCaptureToolbar": {
-    "enabled": false,
+    "enabled": true,
     "stdout": false,
     "captureMode": "monitor",
     "videoMonitor": "Focused",
@@ -41,5 +41,81 @@
     "framerateIndex": 1,
     "qualityIndex": 1,
     "recordAudio": true
+  },
+  "mediaDownloader": {
+    "enabled": true
+  },
+  "dankTranslate": {
+    "enabled": true,
+    "defaultLang": "en",
+    "trigger": ":t"
+  },
+  "unifiedTaskbar": {
+    "enabled": true,
+    "compactMode": true,
+    "groupByApp": true,
+    "allMonitors": false
+  },
+  "dankStopwatch": {
+    "enabled": true
+  },
+  "nixPackageRunner": {
+    "enabled": false,
+    "terminal": "foot",
+    "maxResults": 20
+  },
+  "dankPomodoroTimer": {
+    "enabled": true
+  },
+  "dmsScreenshot": {
+    "enabled": true,
+    "stdout": true,
+    "mode": "full"
+  },
+  "dankStickerSearch": {
+    "enabled": true
+  },
+  "alarmClock": {
+    "enabled": true
+  },
+  "dmsfilemanager": {
+    "enabled": true
+  },
+  "dankTodo": {
+    "enabled": true,
+    "storagePath": "/home/medo/dank-todos"
+  },
+  "screenRecorderLH": {
+    "enabled": true
+  },
+  "todoLauncher": {
+    "enabled": true,
+    "tasksData": "[{\"id\":\"1784326397974\",\"text\":\"dms\",\"done\":false,\"completionDate\":null}]"
+  },
+  "quranWidget": {
+    "enabled": false
+  },
+  "webcamViewer": {
+    "enabled": false,
+    "player": "mpv",
+    "cameras": []
+  },
+  "dankTranslateAI": {
+    "enabled": true
+  },
+  "quickCapture": {
+    "enabled": true
+  },
+  "fullscreenPowerMenu": {
+    "enabled": false
+  },
+  "colorPickerDms": {
+    "enabled": true
+  },
+  "commandRunner": {
+    "enabled": true,
+    "history": [
+      "neverball"
+    ]
   }
 }

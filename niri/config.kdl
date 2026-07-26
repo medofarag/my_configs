@@ -373,10 +373,11 @@ binds {
     Super+E hotkey-overlay-title="open the filemanager: pcmanfm" { spawn "pcmanfm"; }
     Super+B hotkey-overlay-title="open the browser: Zen Browser" { spawn-sh "zen-beta"; }
     Super+Ctrl+P hotkey-overlay-title="open powermenu" { spawn-sh "dms ipc powermenu toggle"; }
+    Super+Ctrl+C hotkey-overlay-title="pick color" { spawn-sh "dms color pick"; }
 
     // flameshot
     Super+Ctrl+S hotkey-overlay-title="flameshot" { spawn-sh "flameshot gui"; }
-    Print hotkey-overlay-title="take a full screen shot" { spawn-sh "flameshot full"; }
+    Print hotkey-overlay-title="full screen shot" { spawn-sh "dms screenshot full"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

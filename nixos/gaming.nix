@@ -5,10 +5,11 @@
     wine
     winetricks
     winePackages.stagingFull
+    lutris-free
     luanti
     # xonotic
     # zeroad
-    # supertuxkart
+    supertuxkart
     freeciv
     neverball
   ];

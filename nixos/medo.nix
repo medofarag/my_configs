@@ -9,19 +9,22 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       libqalculate
-      wf-recorder
       flameshot
       superfile
       fsearch
+      qbittorrent
       keepassxc
       proton-vpn
       oh-my-fish
       cmatrix
       asciiquarium
-      haruna
-      kdePackages.elisa
+      mpv
       ascii
+      tor-browser
+      telegram-desktop
+      youtube-tui
       yt-dlp
+      webcamoid
       lolcat
       kdePackages.filelight
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default

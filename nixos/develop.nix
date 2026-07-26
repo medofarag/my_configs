@@ -2,13 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
-    helix
+    zed-editor
     lua
     python313
     openjdk
     maven
     nodejs
     nasm
+    rustup
     sqlite
     bat
     eza

@@ -5,10 +5,14 @@
     sage
     octave
     libreoffice
+    obsidian
+    emacs
     kdePackages.okular
+    kdePackages.kasts
+    mousepad
+    ascii-draw
     pdfarranger
     tesseract
-    obsidian
     localsend
     pinta
   ];

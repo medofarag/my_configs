@@ -16,7 +16,6 @@
       nerd-fonts.symbols-only
       # noto-fonts-cjk-sans
       nerd-fonts.dejavu-sans-mono
-      vista-fonts
       corefonts
       unicode-emoji
       liberation_ttf

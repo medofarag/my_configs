@@ -1,18 +1,18 @@
 {
   "currentThemeName": "blue",
   "currentThemeCategory": "generic",
-  "customThemeFile": "",
+  "customThemeFile": "/home/medo/.config/DankMaterialShell/themes/amoledBlack/theme.json",
   "registryThemeVariants": {},
-  "matugenScheme": "scheme-neutral",
+  "matugenScheme": "scheme-fidelity",
   "runUserMatugenTemplates": false,
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
-  "dockTransparency": 1,
+  "dockTransparency": 0.85,
   "widgetBackgroundColor": "sch",
   "widgetColorMode": "default",
   "controlCenterTileColorMode": "primary",
   "buttonColorMode": "primary",
-  "cornerRadius": 12,
+  "cornerRadius": 15,
   "niriLayoutGapsOverride": -1,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
@@ -112,6 +112,11 @@
       "id": "builtin_vpn",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "idleInhibitor",
+      "enabled": true,
+      "width": 50
     }
   ],
   "showWorkspaceIndex": true,
@@ -173,10 +178,11 @@
   "appPickerViewMode": "grid",
   "filePickerUsageHistory": {},
   "sortAppsAlphabetically": false,
-  "appLauncherGridColumns": 4,
+  "appLauncherGridColumns": 5,
   "spotlightCloseNiriOverview": true,
   "spotlightSectionViewModes": {
-    "apps": "list"
+    "apps": "list",
+    "plugin_emojiLauncher": "list"
   },
   "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
@@ -188,7 +194,7 @@
   "dankLauncherV2UnloadOnClose": false,
   "useAutoLocation": false,
   "weatherEnabled": true,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "iconTheme": "System Default",
   "cursorSettings": {
     "theme": "System Default",
@@ -282,15 +288,15 @@
   "matugenTemplateVscode": false,
   "matugenTemplateEmacs": false,
   "matugenTemplateZed": false,
-  "showDock": false,
+  "showDock": true,
   "dockAutoHide": false,
-  "dockSmartAutoHide": false,
-  "dockGroupByApp": false,
+  "dockSmartAutoHide": true,
+  "dockGroupByApp": true,
   "dockOpenOnOverview": true,
   "dockPosition": 1,
   "dockSpacing": 4,
   "dockBottomGap": 0,
-  "dockMargin": 0,
+  "dockMargin": 10,
   "dockIconSize": 40,
   "dockIndicatorStyle": "circle",
   "dockBorderEnabled": false,
@@ -299,7 +305,7 @@
   "dockBorderThickness": 1,
   "dockIsolateDisplays": false,
   "dockLauncherEnabled": false,
-  "dockLauncherLogoMode": "apps",
+  "dockLauncherLogoMode": "os",
   "dockLauncherLogoCustomPath": "",
   "dockLauncherLogoColorOverride": "",
   "dockLauncherLogoSizeOffset": 0,
@@ -406,6 +412,22 @@
         {
           "id": "colorPicker",
           "enabled": true
+        },
+        {
+          "id": "mediaDownloader",
+          "enabled": true
+        },
+        {
+          "id": "screenRecorderX",
+          "enabled": true
+        },
+        {
+          "id": "dankStopwatch",
+          "enabled": true
+        },
+        {
+          "id": "dankTodo",
+          "enabled": true
         }
       ],
       "centerWidgets": [
@@ -417,10 +439,6 @@
       "rightWidgets": [
         {
           "id": "systemTray",
-          "enabled": true
-        },
-        {
-          "id": "screenRecorderX",
           "enabled": true
         },
         {
@@ -484,7 +502,7 @@
       "autoHide": false,
       "autoHideDelay": 250,
       "showOnWindowsOpen": false,
-      "openOnOverview": false,
+      "openOnOverview": true,
       "visible": true,
       "popupGapsAuto": true,
       "popupGapsManual": 4,
@@ -567,7 +585,12 @@
   ],
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
-  "desktopWidgetGridSettings": {},
+  "desktopWidgetGridSettings": {
+    "DP-2": {
+      "enabled": false,
+      "size": 30
+    }
+  },
   "desktopWidgetInstances": [],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {

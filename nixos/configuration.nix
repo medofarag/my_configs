@@ -103,13 +103,10 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     "luanti-5.14.0"
-    "electron-39.8.10"
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "mongodb"
     "obsidian"
-    "vista-fonts"
     "corefonts"
   ];
 
@@ -169,6 +166,7 @@
     xfsprogs
 
     nix-search
+    font-manager
     wl-clipboard
   ];
 
