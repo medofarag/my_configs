@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./shells/dms.nix
+    # ./shells/dms.nix
+    ./shells/noctalia.nix
   ];
 
   programs.niri = {
@@ -22,7 +23,6 @@
     kdePackages.breeze
     kdePackages.breeze-gtk
     kdePackages.breeze-icons
-    qt6Packages.qt6ct
     kdePackages.qt6ct
     libsForQt5.qt5ct
     nwg-look

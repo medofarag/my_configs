@@ -21,8 +21,6 @@
       mpv
       ascii
       tor-browser
-      telegram-desktop
-      youtube-tui
       yt-dlp
       webcamoid
       lolcat

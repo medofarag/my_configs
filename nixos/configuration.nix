@@ -102,7 +102,6 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "luanti-5.14.0"
   ];
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [

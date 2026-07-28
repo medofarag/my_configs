@@ -6,7 +6,6 @@
     octave
     libreoffice
     obsidian
-    emacs
     kdePackages.okular
     kdePackages.kasts
     mousepad

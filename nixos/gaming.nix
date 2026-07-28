@@ -8,9 +8,17 @@
     lutris-free
     luanti
     # xonotic
-    # zeroad
+    zeroad
     supertuxkart
     freeciv
     neverball
+    nsnake
+    nudoku
+    kdePackages.kapman
+    kdePackages.kbreakout
+    kdePackages.kmahjongg
+    kdePackages.kpat
+    kdePackages.palapeli
+    kdePackages.kubrick
   ];
 }

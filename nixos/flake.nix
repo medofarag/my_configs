@@ -10,6 +10,11 @@
         # home-manager.follows = "home-manager";
       };
     };
+    
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/legacy-v4";
+      inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {

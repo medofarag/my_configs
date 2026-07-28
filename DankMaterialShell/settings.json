@@ -195,7 +195,7 @@
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "wifi",
-  "iconTheme": "System Default",
+  "iconTheme": "breeze-dark",
   "cursorSettings": {
     "theme": "System Default",
     "size": 24,
@@ -259,7 +259,7 @@
   "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
-  "syncModeWithPortal": true,
+  "syncModeWithPortal": false,
   "terminalsAlwaysDark": false,
   "muxType": "tmux",
   "muxUseCustomCommand": false,
@@ -418,15 +418,7 @@
           "enabled": true
         },
         {
-          "id": "screenRecorderX",
-          "enabled": true
-        },
-        {
           "id": "dankStopwatch",
-          "enabled": true
-        },
-        {
-          "id": "dankTodo",
           "enabled": true
         }
       ],
@@ -449,6 +441,11 @@
           "id": "keyboard_layout_name",
           "enabled": true,
           "keyboardLayoutNameCompactMode": false
+        },
+        {
+          "id": "cpuUsage",
+          "enabled": true,
+          "minimumWidth": true
         },
         {
           "id": "memUsage",
@@ -475,9 +472,9 @@
           "enabled": true
         }
       ],
-      "spacing": 2,
-      "innerPadding": -3,
-      "bottomGap": 0,
+      "spacing": 0,
+      "innerPadding": -2,
+      "bottomGap": -2,
       "transparency": 0,
       "widgetTransparency": 0,
       "squareCorners": false,
@@ -485,7 +482,7 @@
       "maximizeWidgetIcons": false,
       "maximizeWidgetText": false,
       "removeWidgetPadding": false,
-      "widgetPadding": 6,
+      "widgetPadding": 5,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,

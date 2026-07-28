@@ -6,7 +6,7 @@
       enable = true;
       defaultFonts = {
         monospace = [ "JetBrains Mono" "DejaVu Sans Mono" ];
-        sansSerif = [ "Noto Sans" "DejaVu Sans" ];
+        sansSerif = [ "Noto Sans Arabic UI" "DejaVu Sans" ];
         serif = [ "Noto Serif" "DejaVu Serif" ];
       };
     };

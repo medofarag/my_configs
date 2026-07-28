@@ -2,8 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
-    zed-editor
+    kdePackages.konsole
+    wget
     lua
+    luaPackages.tree-sitter-cli
+    gcc
+    tree-sitter
     python313
     openjdk
     maven
