@@ -7,6 +7,7 @@
     lua
     luaPackages.tree-sitter-cli
     gcc
+    gnumake
     tree-sitter
     python313
     openjdk

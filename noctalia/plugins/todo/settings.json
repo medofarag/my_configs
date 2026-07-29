@@ -1,0 +1,70 @@
+{
+  "todos": [
+    {
+      "id": 1785254905838,
+      "text": "neovim autocompletion",
+      "completed": false,
+      "createdAt": "2026-07-28T16:08:25.838Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1785248506265,
+      "text": "smart tabs on neovim",
+      "completed": false,
+      "createdAt": "2026-07-28T14:21:46.265Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1785248472840,
+      "text": "اعادة الهيكلة في nvim لتنظيم شكل الكود",
+      "completed": false,
+      "createdAt": "2026-07-28T14:21:12.840Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1785248451367,
+      "text": "fix qt themes on system",
+      "completed": false,
+      "createdAt": "2026-07-28T14:20:51.367Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    },
+    {
+      "id": 1785248434058,
+      "text": "fix arabic fonts on system",
+      "completed": false,
+      "createdAt": "2026-07-28T14:20:34.058Z",
+      "pageId": 0,
+      "priority": "medium",
+      "details": ""
+    }
+  ],
+  "pages": [
+    {
+      "id": 0,
+      "name": "General"
+    }
+  ],
+  "current_page_id": 0,
+  "count": 5,
+  "completedCount": 0,
+  "showCompleted": true,
+  "showBackground": true,
+  "isExpanded": false,
+  "useCustomColors": false,
+  "priorityColors": {
+    "high": "#f44336",
+    "medium": "#2196f3",
+    "low": "#9e9e9e"
+  },
+  "exportPath": "~/Documents",
+  "exportFormat": "markdown",
+  "exportEmptySections": false
+}

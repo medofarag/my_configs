@@ -10,6 +10,7 @@
     packages = with pkgs; [
       libqalculate
       flameshot
+      flowblade
       superfile
       fsearch
       qbittorrent
