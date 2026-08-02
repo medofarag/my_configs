@@ -20,4 +20,11 @@
   virtualisation.libvirtd.qemu = {
     swtpm.enable = true;
   };
+
+  # virtualbox
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "medo" ];
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.dragAndDrop = true;
+  boot.kernelModules = [ "vboxdrv" "vboxnetadp" "vboxnetflt" ];
 }

@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kdePackages.konsole
+    zed-editor
     wget
     lua
     luaPackages.tree-sitter-cli

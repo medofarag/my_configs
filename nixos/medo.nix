@@ -11,7 +11,6 @@
       libqalculate
       flameshot
       flowblade
-      superfile
       fsearch
       qbittorrent
       keepassxc
@@ -20,10 +19,10 @@
       cmatrix
       asciiquarium
       mpv
+      tauon
       ascii
       tor-browser
       yt-dlp
-      webcamoid
       lolcat
       kdePackages.filelight
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default

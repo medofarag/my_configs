@@ -6,13 +6,13 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "compact",
+        "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": true,
         "enableClipboardSmartIcons": true,
         "enableSessionSearch": true,
-        "enableSettingsSearch": false,
+        "enableSettingsSearch": true,
         "enableWindowsSearch": true,
         "iconMode": "native",
         "ignoreMouseInput": false,
@@ -78,22 +78,6 @@
         "widgetSpacing": 2,
         "widgets": {
             "center": [
-                {
-                    "compactMode": false,
-                    "hideMode": "hidden",
-                    "hideWhenIdle": false,
-                    "id": "MediaMini",
-                    "maxWidth": 145,
-                    "panelShowAlbumArt": true,
-                    "scrollingMode": "hover",
-                    "showAlbumArt": true,
-                    "showArtistFirst": true,
-                    "showProgressRing": true,
-                    "showVisualizer": false,
-                    "textColor": "none",
-                    "useFixedWidth": false,
-                    "visualizerType": "linear"
-                }
             ],
             "left": [
                 {
@@ -392,9 +376,6 @@
                 }
             ],
             "right": [
-                {
-                    "id": "KeepAwake"
-                },
                 {
                     "id": "NightLight"
                 }

@@ -1,5 +1,12 @@
 {
-  "notes": [],
+  "notes": [
+    {
+      "id": "1785485013068",
+      "title": "freedom",
+      "content": "fediverse\nself-hoting\nP2P\ntorrent",
+      "modifiedAt": "2026-08-01T08:12:00.626Z"
+    }
+  ],
   "showCountInBar": true,
-  "count": 0
+  "count": 1
 }

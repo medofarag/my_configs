@@ -17,6 +17,7 @@
       # noto-fonts-cjk-sans
       nerd-fonts.dejavu-sans-mono
       corefonts
+      carlito
       unicode-emoji
       liberation_ttf
       noto-fonts
