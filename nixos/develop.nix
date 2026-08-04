@@ -2,13 +2,11 @@
 
 {
   environment.systemPackages = with pkgs; [
-    zed-editor
-    wget
-    lua
+    tree-sitter
     luaPackages.tree-sitter-cli
     gcc
-    gnumake
-    tree-sitter
+    wget
+    lua
     python313
     openjdk
     maven
@@ -25,4 +23,8 @@
     jq
     tmux
   ];
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
 }

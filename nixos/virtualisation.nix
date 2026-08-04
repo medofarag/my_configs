@@ -8,18 +8,19 @@
 
   environment.systemPackages = with pkgs; [
     distrobox
-    guestfs-tools
-    virtiofsd
+     # guestfs-tools
+     # virtiofsd
+     # virtio-win
   ];
   
   # virtmanager
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["medo"];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
-  virtualisation.libvirtd.qemu = {
-    swtpm.enable = true;
-  };
+  # programs.virt-manager.enable = true;
+  # users.groups.libvirtd.members = ["medo"];
+  # virtualisation.libvirtd.enable = true;
+  # virtualisation.spiceUSBRedirection.enable = true;
+  # virtualisation.libvirtd.qemu = {
+  #   swtpm.enable = true;
+  # };
 
   # virtualbox
   virtualisation.virtualbox.host.enable = true;

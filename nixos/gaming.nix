@@ -5,11 +5,7 @@
     wine
     winetricks
     lutris-free
-    luanti
     # xonotic
-    zeroad
-    supertuxkart
-    openttd
     neverball
   ];
 }

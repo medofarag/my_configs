@@ -108,6 +108,7 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "obsidian"
+    "mongodb-ce"
     "corefonts"
   ];
 
@@ -134,9 +135,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
   
   environment.systemPackages = with pkgs; [
 
@@ -150,7 +148,6 @@
     fastfetch
     vnstat
     nethogs
-    tree-sitter
     zoxide
 
     ffmpeg

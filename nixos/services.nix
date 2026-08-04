@@ -8,7 +8,6 @@
       ./services/openssh.nix
       ./services/audio.nix
       ./services/xserver.nix
-      # ./services/searxng.nix
       ./services/syncthing.nix
     ];
 

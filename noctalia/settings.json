@@ -373,12 +373,12 @@
                 },
                 {
                     "id": "NoctaliaPerformance"
-                }
-            ],
-            "right": [
+                },
                 {
                     "id": "NightLight"
                 }
+            ],
+            "right": [
             ]
         }
     },
@@ -390,19 +390,6 @@
             {
                 "name": "DP-2",
                 "widgets": [
-                    {
-                        "clockColor": "none",
-                        "clockStyle": "analog",
-                        "customFont": "",
-                        "format": "HH:mm\\nd MMMM yyyy",
-                        "id": "Clock",
-                        "roundedCorners": true,
-                        "scale": 1,
-                        "showBackground": false,
-                        "useCustomFont": false,
-                        "x": 646,
-                        "y": 60
-                    }
                 ]
             }
         ],
@@ -449,7 +436,7 @@
         "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
-        "avatarImage": "/home/medo/Pictures/wallpapers and Icons/clippy-1488711349.jpg",
+        "avatarImage": "/home/medo/Pictures/clippy-1488711349.jpg",
         "boxRadiusRatio": 1,
         "clockFormat": "ddd, MMM dd ",
         "clockStyle": "analog",

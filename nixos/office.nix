@@ -10,7 +10,6 @@
     mousepad
     ascii-draw
     pdfarranger
-    localsend
     pinta
   ];
 }

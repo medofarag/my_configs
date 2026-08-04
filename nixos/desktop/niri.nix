@@ -2,7 +2,6 @@
 
 {
   imports = [
-    # ./shells/dms.nix
     ./shells/noctalia.nix
   ];
 
@@ -13,7 +12,6 @@
   environment.systemPackages = with pkgs; [
     flameshot
     foot
-    hyprpolkitagent
     wl-clipboard
     loupe
     

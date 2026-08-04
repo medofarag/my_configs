@@ -14,16 +14,11 @@
       fsearch
       qbittorrent
       keepassxc
-      proton-vpn
       oh-my-fish
-      cmatrix
-      asciiquarium
       mpv
-      tauon
       ascii
       tor-browser
       yt-dlp
-      lolcat
       kdePackages.filelight
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
