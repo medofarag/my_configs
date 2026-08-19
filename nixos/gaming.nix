@@ -5,7 +5,10 @@
     wine
     winetricks
     lutris-free
+    # fjordlauncher.packages.${pkgs.system}.fjordlauncher
     # xonotic
-    neverball
+    # neverball
+    # openttd
+    # luanti
   ];
 }

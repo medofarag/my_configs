@@ -1,7 +1,5 @@
 {
-  "colorHistory": [
-    "#62636A"
-  ],
+  "colorHistory": [],
   "paletteColors": [],
   "installedLangs": [
     "afr",
@@ -140,20 +138,5 @@
   "detectedRecorder": "wl-screenrec",
   "recordSkipConfirmation": false,
   "recordCopyToClipboard": false,
-  "gifMaxSeconds": 30,
-  "resultHex": "",
-  "resultRgb": "",
-  "resultHsv": "",
-  "resultHsl": "",
-  "colorCapturePath": "",
-  "colorCacheBust": 0,
-  "ocrResult": "",
-  "ocrCapturePath": "",
-  "qrResult": "",
-  "qrCapturePath": "",
-  "translateResult": "",
-  "x02ApiKey": "",
-  "x02Expiry": "7d",
-  "shareSkipPopover": false,
-  "searchEngineUrl": "https://www.duckduckgo.com/?q="
+  "gifMaxSeconds": 30
 }

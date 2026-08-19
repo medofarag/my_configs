@@ -5,23 +5,9 @@
   users.users.medo = {
     isNormalUser = true;
     description = "Mahmoud Farag";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "podman"];
+    extraGroups = [ "networkmanager" "wheel" "podman"];
     shell = pkgs.fish;
-    packages = with pkgs; [
-      libqalculate
-      flameshot
-      flowblade
-      fsearch
-      qbittorrent
-      keepassxc
-      oh-my-fish
-      mpv
-      ascii
-      tor-browser
-      yt-dlp
-      kdePackages.filelight
-      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-    ];
+    packages = with pkgs; [];
   };
   programs.fish.enable = true;
 }

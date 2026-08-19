@@ -2,14 +2,16 @@
 
 {
   environment.systemPackages = with pkgs; [
-    sage
-    octave
-    onlyoffice-desktopeditors
+    # sage
+    # octave
+    # onlyoffice-desktopeditors
     obsidian
     kdePackages.okular
+    thunderbird-latest-bin
+    drawy
     mousepad
-    ascii-draw
-    pdfarranger
+    # ascii-draw
+    # pdfarranger
     pinta
   ];
 }

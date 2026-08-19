@@ -4,9 +4,9 @@
   imports = [
     # desktop
     ./desktop/niri.nix
+    # ./desktop/plasma.nix
 
     # DisplayManager
-    # ./desktop/displayManager/lightdm.nix
     ./desktop/displayManager/ly.nix
   ];
 }

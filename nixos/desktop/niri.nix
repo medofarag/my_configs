@@ -21,8 +21,8 @@
     kdePackages.breeze
     kdePackages.breeze-gtk
     kdePackages.breeze-icons
-    kdePackages.qt6ct
-    libsForQt5.qt5ct
+    # kdePackages.qt6ct
+    # libsForQt5.qt5ct
     nwg-look
 
     # Essential apps

@@ -206,6 +206,35 @@
                         "showCountInBar": true
                     },
                     "id": "plugin:simple-notes"
+                },
+                {
+                    "defaultSettings": {
+                        "ai": {
+                            "apiKeys": {
+                            },
+                            "maxHistoryLength": 100,
+                            "model": "gemini-2.5-flash",
+                            "openaiBaseUrl": "https://api.openai.com/v1/chat/completions",
+                            "openaiLocal": false,
+                            "provider": "google",
+                            "systemPrompt": "You are a helpful assistant integrated into a Linux desktop shell. Be concise and helpful.",
+                            "temperature": 0.7
+                        },
+                        "maxHistoryLength": 100,
+                        "panelDetached": true,
+                        "panelHeightRatio": 0.85,
+                        "panelPosition": "right",
+                        "panelWidth": 520,
+                        "scale": 1,
+                        "translator": {
+                            "backend": "google",
+                            "deeplApiKey": "",
+                            "realTimeTranslation": true,
+                            "sourceLanguage": "auto",
+                            "targetLanguage": "en"
+                        }
+                    },
+                    "id": "plugin:assistant-panel"
                 }
             ],
             "right": [
@@ -233,7 +262,8 @@
                     "pinned": [
                         "Flameshot",
                         "Passwords - KeePassXC",
-                        ".Passwords.kdbx [Locked] - KeePassXC"
+                        ".Passwords.kdbx [Locked] - KeePassXC",
+                        "proton.vpn.app.gtk"
                     ]
                 },
                 {
@@ -703,6 +733,14 @@
     },
     "templates": {
         "activeTemplates": [
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "zenBrowser"
+            }
         ],
         "enableUserTheming": true
     },

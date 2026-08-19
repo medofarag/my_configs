@@ -8,21 +8,32 @@
     wget
     lua
     python313
-    openjdk
-    maven
+    # openjdk
+    # maven
     nodejs
-    nasm
+    # nasm
     rustup
-    sqlite
-    bat
+    # sqlite
+    # tokei
+    # bat
     eza
     ripgrep
     fd
-    fzf
+    # fzf
     git
-    jq
+    # jq
     tmux
+
+    postman
+    mongosh
+    # jetbrains.webstorm
   ];
+
+  services.mongodb = { 
+    enable = true;
+    package = pkgs.mongodb-ce;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;

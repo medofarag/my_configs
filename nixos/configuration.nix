@@ -33,6 +33,9 @@
 
       # office
       ./office.nix
+
+      # creativity
+      ./creativity.nix
     ];
 
   # Bootloader.
@@ -54,7 +57,7 @@
   };
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   
   networking.hostName = "medo"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -88,7 +91,7 @@
 
   environment = {
     sessionVariables = {
-      QT_QPA_PLATFORMTHEME = "qt6ct";
+      # QT_QPA_PLATFORMTHEME = "qt6ct";
     };
   };
 
@@ -108,7 +111,9 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "obsidian"
+    "warp-terminal"
     "mongodb-ce"
+    "postman"
     "corefonts"
   ];
 
@@ -154,6 +159,7 @@
     unrar-free
     zip
     unzip
+    p7zip
 
     # Disk
     gparted

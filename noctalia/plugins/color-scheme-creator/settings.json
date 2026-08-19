@@ -1,7 +1,8 @@
 {
   "iconColor": "none",
-  "wip": {
-    "name": "",
+  "wip": null
+}
+name": "",
     "dark": {
       "mPrimary": "#3daee9",
       "mOnPrimary": "#141618",
