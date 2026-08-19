@@ -1,5 +1,7 @@
 {
-  "colorHistory": [],
+  "colorHistory": [
+    "#262626"
+  ],
   "paletteColors": [],
   "installedLangs": [
     "afr",
@@ -138,5 +140,11 @@
   "detectedRecorder": "wl-screenrec",
   "recordSkipConfirmation": false,
   "recordCopyToClipboard": false,
-  "gifMaxSeconds": 30
+  "gifMaxSeconds": 30,
+  "resultHex": "#262626",
+  "resultRgb": "rgb(38, 38, 38)",
+  "resultHsv": "hsv(0, 0%, 15%)",
+  "resultHsl": "hsl(0, 0%, 15%)",
+  "colorCapturePath": "/tmp/screen-toolkit-colorpicker.png",
+  "colorCacheBust": 1787124098318
 }

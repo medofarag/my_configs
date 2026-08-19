@@ -14,12 +14,12 @@
     # nasm
     rustup
     # sqlite
-    # tokei
-    # bat
+    tokei
+    bat
     eza
     ripgrep
     fd
-    # fzf
+    fzf
     git
     # jq
     tmux

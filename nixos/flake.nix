@@ -3,16 +3,10 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        # home-manager.follows = "home-manager";
       };
     };
 
@@ -23,7 +17,7 @@
 
     noctalia = {
       url = "github:noctalia-dev/noctalia/legacy-v4";
-      inputs.nixpkgs.follows = "nixpkgs"; # this line is optional, prevents downloading two versions of nixpkgs but disables cache
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     fjordlauncher = {
@@ -32,7 +26,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager ,fjordlauncher,... }: {
+  outputs = inputs@{ self, nixpkgs, fjordlauncher, ... }: {
     nixosConfigurations.medo-workstation = nixpkgs.lib.nixosSystem {
       specialArgs = { 
         inherit inputs;
@@ -40,8 +34,6 @@
       };
       modules = [
         ./configuration.nix                         # Your main configuration
-        home-manager.nixosModules.default
-        ./modules/home-manager.nix
       ];
     };
   };

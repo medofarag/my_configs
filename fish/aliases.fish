@@ -1,0 +1,26 @@
+alias cd z
+alias ll 'eza -lhF --color=auto --group-directories-first --git'
+alias tree 'eza --tree --git --group-directories-first'
+alias hist 'history | fzf'
+alias .. 'cd ..'
+alias ... 'cd ../..'
+alias edit '$EDITOR'
+alias weather 'curl wttr.in'
+alias pray 'node ~/scripts/prayertime.js'
+alias backup 'bash ~/scripts/backup_my_configs.sh'
+alias runz "run0 --background="""
+alias spf superfile
+
+# tmux
+alias tmuxac 'tmux new -A -s'
+alias tmuxr 'tmux kill-session -t'
+
+# git
+alias gst 'git status'
+alias gcls 'git config --list'
+alias gcs 'git config --system'
+alias gcg 'git config --global'
+alias gcl 'git config'
+alias gaa 'git add .'
+alias gcm 'git commit -m'
+alias gpo 'git push origin'
