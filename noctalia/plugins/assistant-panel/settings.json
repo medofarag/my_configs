@@ -20,8 +20,8 @@
   },
   "translator": {
     "backend": "google",
-    "sourceLanguage": "ar",
-    "targetLanguage": "en",
+    "sourceLanguage": "en",
+    "targetLanguage": "ar",
     "realTimeTranslation": true,
     "deeplApiKey": ""
   },

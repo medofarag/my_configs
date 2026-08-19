@@ -1,11 +1,10 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, fjordlauncher, ... }:
 
 {
   environment.systemPackages = with pkgs; [    
     wine
     winetricks
     lutris-free
-    # fjordlauncher.packages.${pkgs.system}.fjordlauncher
     # xonotic
     # neverball
     # openttd
