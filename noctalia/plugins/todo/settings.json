@@ -10,15 +10,6 @@
       "details": ""
     },
     {
-      "id": 1785433265875,
-      "text": "learn zig",
-      "completed": false,
-      "createdAt": "2026-07-30T17:41:05.875Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1785248451367,
       "text": "fix qt themes on system",
       "completed": false,
@@ -44,7 +35,7 @@
     }
   ],
   "current_page_id": 0,
-  "count": 4,
+  "count": 3,
   "completedCount": 0,
   "showCompleted": true,
   "showBackground": true,

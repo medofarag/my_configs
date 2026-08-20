@@ -8,12 +8,12 @@
 
   environment.systemPackages = with pkgs; [
     distrobox
-    # guestfs-tools
-    # virtiofsd
-    # virtio-win
+    guestfs-tools
+    virtiofsd
+    virtio-win
   ];
 
-  /*
+  
   # virtmanager
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["medo"];
@@ -22,7 +22,7 @@
   virtualisation.libvirtd.qemu = {
     swtpm.enable = true;
   };
-  */
+  
 
   /*
   # virtualbox
