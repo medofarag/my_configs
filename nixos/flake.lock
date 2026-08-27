@@ -1,26 +1,5 @@
 {
   "nodes": {
-    "fjordlauncher": {
-      "inputs": {
-        "libnbtplusplus": "libnbtplusplus",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1785125572,
-        "narHash": "sha256-71w3FdjokHV8PJovgcWUIyaXQuwsQLgykkPrxWxkylo=",
-        "owner": "unmojang",
-        "repo": "FjordLauncher",
-        "rev": "feb4392ef26353a6d59adde34995268f3bfcdb5b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "unmojang",
-        "repo": "FjordLauncher",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -74,43 +53,6 @@
       "original": {
         "owner": "AlvaroParker",
         "repo": "helium-nix",
-        "type": "github"
-      }
-    },
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "zen-browser",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1786719456,
-        "narHash": "sha256-B74DLQs/VjlqyhnnX3tguWwghqJHWSJX30TKZuAljIg=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "83b7606dcf44abe3a94b86e8bb2b3355d22e8797",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "libnbtplusplus": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1772016279,
-        "narHash": "sha256-7itkptyjoRcXfGLwg1/jxajetZ3a4mDc66+w4X6yW8s=",
-        "owner": "PrismLauncher",
-        "repo": "libnbtplusplus",
-        "rev": "687e43031df0dc641984b4256bcca50d5b3f7de3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "PrismLauncher",
-        "repo": "libnbtplusplus",
         "type": "github"
       }
     },
@@ -177,11 +119,9 @@
     },
     "root": {
       "inputs": {
-        "fjordlauncher": "fjordlauncher",
         "helium": "helium",
         "nixpkgs": "nixpkgs",
-        "noctalia": "noctalia",
-        "zen-browser": "zen-browser"
+        "noctalia": "noctalia"
       }
     },
     "systems": {
@@ -233,27 +173,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "zen-browser": {
-      "inputs": {
-        "home-manager": "home-manager",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1786764320,
-        "narHash": "sha256-FO8IkyM+S1nFHPetg20r+EsLicLPuh+yy5WKqxG20JI=",
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
-        "rev": "a19fe7e45d173d5e455771d7ecce9bbd02a9598f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "0xc000022070",
-        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

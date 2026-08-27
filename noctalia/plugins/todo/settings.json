@@ -1,24 +1,6 @@
 {
   "todos": [
     {
-      "id": 1785433515287,
-      "text": "add Icons to launcher menu eteries",
-      "completed": false,
-      "createdAt": "2026-07-30T17:45:15.287Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
-      "id": 1785248451367,
-      "text": "fix qt themes on system",
-      "completed": false,
-      "createdAt": "2026-07-28T14:20:51.367Z",
-      "pageId": 0,
-      "priority": "medium",
-      "details": ""
-    },
-    {
       "id": 1785248434058,
       "text": "fix arabic fonts on system",
       "completed": false,
@@ -35,7 +17,7 @@
     }
   ],
   "current_page_id": 0,
-  "count": 3,
+  "count": 1,
   "completedCount": 0,
   "showCompleted": true,
   "showBackground": true,

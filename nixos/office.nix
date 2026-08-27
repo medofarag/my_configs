@@ -7,7 +7,6 @@
     # onlyoffice-desktopeditors
     obsidian
     kdePackages.okular
-    thunderbird-latest-bin
     drawy
     mousepad
     # ascii-draw

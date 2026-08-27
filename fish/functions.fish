@@ -14,12 +14,12 @@ end
 
 function full-update
     run0 --background="" nix flake update --flake ~/.nixos/
-    run0 --background="" nixos-rebuild boot --flake ~/.nixos/#medo-workstation
+    run0 --background="" nixos-rebuild boot --flake ~/.nixos/#nixos
     if test (flatpak list | wc -l) -ne 0
         flatpak update -y
     end
 end
 
 function rebuild
-    run0 --background="" nixos-rebuild $argv --flake ~/.nixos/#medo-workstation
+    run0 --background="" nixos-rebuild $argv --flake ~/.nixos/#nixos
 end

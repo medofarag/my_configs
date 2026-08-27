@@ -9,7 +9,7 @@
     shell = pkgs.fish;
     packages = with pkgs; [
       libqalculate
-      # localsend
+      localsend
       flameshot
       fsearch
       qbittorrent
@@ -20,11 +20,12 @@
       kdePackages.kasts
       proton-vpn
       tor-browser
+      age
       yt-dlp
-      # kdePackages.filelight
-      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+      kdePackages.filelight
       inputs.helium.packages.${stdenv.hostPlatform.system}.default
     ];
   };
   programs.fish.enable = true;
+  programs.firefox.enable = true;
 }

@@ -24,7 +24,7 @@
     # jq
     tmux
 
-    postman
+    bruno
     mongosh
     # jetbrains.webstorm
   ];

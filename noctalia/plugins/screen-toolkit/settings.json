@@ -141,10 +141,10 @@
   "recordSkipConfirmation": false,
   "recordCopyToClipboard": false,
   "gifMaxSeconds": 30,
-  "resultHex": "#262626",
-  "resultRgb": "rgb(38, 38, 38)",
-  "resultHsv": "hsv(0, 0%, 15%)",
-  "resultHsl": "hsl(0, 0%, 15%)",
-  "colorCapturePath": "/tmp/screen-toolkit-colorpicker.png",
-  "colorCacheBust": 1787124098318
+  "resultHex": "",
+  "resultRgb": "",
+  "resultHsv": "",
+  "resultHsl": "",
+  "colorCapturePath": "",
+  "colorCacheBust": 0
 }
