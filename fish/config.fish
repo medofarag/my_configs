@@ -1,5 +1,12 @@
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export BROWSER=helium
+export FILEMANGER=pcmanfm
+export EDITOR=nvim
+export VISUAL=nvim
+
 # remove welcome message
 set -g fish_greeting
 set -gx QT_QPA_PLATFORM wayland

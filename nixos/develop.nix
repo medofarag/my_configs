@@ -10,29 +10,31 @@
     python313
     # openjdk
     # maven
-    nodejs
+    # nodejs
     # nasm
-    rustup
+    # rustup
     # sqlite
     tokei
     bat
     eza
-    ripgrep
+    # ripgrep
     fd
     fzf
     git
     # jq
     tmux
 
-    bruno
-    mongosh
+    # bruno
+    # mongosh
     # jetbrains.webstorm
   ];
 
+  /*
   services.mongodb = { 
     enable = true;
     package = pkgs.mongodb-ce;
   };
+  */
 
   programs.neovim = {
     enable = true;

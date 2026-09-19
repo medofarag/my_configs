@@ -23,7 +23,7 @@ set $menu fuzzel
 set $filemanager pcmanfm
 set $texteditor kwrite
 set $emojiselector bemoji
-set $browser zen-browser
+set $browser helium
 set $screenlocker swaylock
 ### Output configuration
 #
@@ -170,7 +170,7 @@ exec_always autotiling
 # ===================== BORDERS & GAPS ============================
 
 # Gaps between windows
-gaps inner 4
+gaps inner 2
 gaps outer 2
 
 # Border width, I prefer THIN borders ^-^

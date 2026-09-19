@@ -9,13 +9,13 @@
       ./services/audio.nix
       ./services/xserver.nix
       ./services/syncthing.nix
-      ./services/searxng.nix
+      # ./services/searxng.nix
       # ./services/tor.nix
     ];
 
   services.vnstat.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.gvfs.enable = true;
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
   # services.printing.enable = true;
 }

@@ -38,7 +38,7 @@
       ./creativity.nix
 
       # Apparmor
-      ./apparmor.nix
+      # ./apparmor.nix
     ];
 
   nix.gc = {
@@ -124,31 +124,12 @@
     "corefonts"
   ];
 
-  programs.appimage.enable = true;
-  programs.appimage.binfmt = true;
-  programs.appimage.package = pkgs.appimage-run.override { 
-    extraPkgs = pkgs: [
-      pkgs.python312
-    ]; 
-  };
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc.lib
-    libX11
-    libXcursor
-    libXi
-    libXrandr
-    libGL
-    libxml2
-    gtk3
-    harfbuzzFull
-  ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   
   environment.systemPackages = with pkgs; [
+
+    fribidi
 
     doas-sudo-shim
 
@@ -159,7 +140,7 @@
     btop
     fastfetch
     vnstat
-    nethogs
+    # nethogs
     zoxide
 
     ffmpeg
@@ -169,17 +150,19 @@
     p7zip
 
     # Disk
-    cryptsetup
+    # cryptsetup
 
+    /*
     gparted
     btrfs-progs
     ntfs3g
     exfatprogs
     dosfstools
     xfsprogs
+    */
 
     nix-search
-    font-manager
+    # font-manager
     wl-clipboard
   ];
 
@@ -191,7 +174,7 @@
   # programs.mtr.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    # enableSSHSupport = true;
   };
 
   # List services that you want to enable:

@@ -9,28 +9,25 @@ cdls() {
 }
 
 full-update() {
-  sudo nix flake update && sudo nixos-rebuild switch --flake /etc/nixos/#medo-workstation
   flatpak update -y
-  ble-update
 }
 
-: '
 # runit
 sv-ls() {
   echo "===available services==="
-  ls -laF /etc/runit/sv/
+  ls -laF /etc/sv/
 }
 
 sv-add() {
-  sudo ln -s /etc/runit/sv/$1 /run/runit/service/
+  sudo ln -s /etc/sv/$1 /var/service/
 }
 
 sv-add-default() {
-  sudo ln -s /etc/runit/sv/$1 /etc/runit/runsvdir/default/
+  sudo ln -s /etc/sv/$1 /etc/runit/runsvdir/default/
 }
 
 sv-show() {
-  ls -laF /run/runit/service/
+  ls -la /var/service/
 }
 
 sv-show-default() {
@@ -41,4 +38,3 @@ sv-rm() {
   sudo rm -rf /var/service/$1
   sudo rm -rf /etc/runit/runsvdir/default/$1
 }
-'

@@ -5,9 +5,13 @@
     wine
     winetricks
     lutris-free
+    # chess-tui
+    # stockfish
+    /*
     xonotic
     neverball
     openttd
     luanti
+    */
   ];
 }

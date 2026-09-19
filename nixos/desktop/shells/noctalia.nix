@@ -6,6 +6,7 @@
     gpu-screen-recorder
     
     # required by screen toolkits
+    /*
     grim
     slurp
     wl-clipboard
@@ -22,5 +23,6 @@
     hyprpicker
     gifski
     zenity
+    */
   ];
 }

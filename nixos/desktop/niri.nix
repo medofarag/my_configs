@@ -11,9 +11,12 @@
 
   environment.systemPackages = with pkgs; [
     flameshot
-    foot
+    sakura
     wl-clipboard
     loupe
+
+    superfile
+    exiftool
     
     xwayland-satellite
 

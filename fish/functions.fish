@@ -12,14 +12,34 @@ function addpath
     export PATH=$PATH:$argv[1]
 end
 
+# function full-update
+#     run0 --background="" nix flake update --flake ~/.nixos/
+#     run0 --background="" nixos-rebuild boot --flake ~/.nixos/#nixos
+#     if test (flatpak list | wc -l) -ne 0
+#         flatpak update -y
+#     end
+# end
+
 function full-update
-    run0 --background="" nix flake update --flake ~/.nixos/
-    run0 --background="" nixos-rebuild boot --flake ~/.nixos/#nixos
+    run0 --background="" pacman -Syu
     if test (flatpak list | wc -l) -ne 0
         flatpak update -y
     end
 end
 
-function rebuild
-    run0 --background="" nixos-rebuild $argv --flake ~/.nixos/#nixos
+# function rebuild
+#     run0 --background="" nixos-rebuild $argv --flake ~/.nixos/#nixos
+# end
+
+function nix-rebuild
+    home-manager switch --flake ~/.config/home-manager/#medo
+end
+
+function nix-update
+    nix flake update
+    home-manager switch --flake ~/.config/home-manager/#medo
+end
+
+function nix-rollback
+    home-manager switch --rollback
 end

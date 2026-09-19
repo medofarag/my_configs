@@ -1,7 +1,5 @@
 {
-  "colorHistory": [
-    "#262626"
-  ],
+  "colorHistory": [],
   "paletteColors": [],
   "installedLangs": [
     "afr",
@@ -140,11 +138,5 @@
   "detectedRecorder": "wl-screenrec",
   "recordSkipConfirmation": false,
   "recordCopyToClipboard": false,
-  "gifMaxSeconds": 30,
-  "resultHex": "",
-  "resultRgb": "",
-  "resultHsv": "",
-  "resultHsl": "",
-  "colorCapturePath": "",
-  "colorCacheBust": 0
+  "gifMaxSeconds": 30
 }
