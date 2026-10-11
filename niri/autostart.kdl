@@ -1,0 +1,5 @@
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "noctalia"
+spawn-sh-at-startup "jupyter-lab --no-browser"
+
+

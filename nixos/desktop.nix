@@ -7,7 +7,7 @@
     # ./desktop/plasma.nix
 
     # DisplayManager
-    # ./desktop/displayManager/ly.nix
-    ./desktop/displayManager/noctalia-greeter.nix
+    ./desktop/displayManager/ly.nix
+    # ./desktop/displayManager/noctalia-greeter.nix
   ];
 }

@@ -5,30 +5,28 @@
   users.users.medo = {
     isNormalUser = true;
     description = "Mahmoud Farag";
-    extraGroups = [ "networkmanager" "wheel" "podman"];
+    extraGroups = [ "networkmanager" "wheel" "podman" "nextcloud" ];
     shell = pkgs.fish;
     packages = with pkgs; [
       libqalculate
-      # localsend
+      localsend
       flameshot
       fsearch
-      # qbittorrent
-      # caligula
-      # pass
-      keepassxc
-      # python314Packages.faker
+      transmission_4-gtk
+      gnome-multi-writer 
+      pass
+      python314Packages.faker
       oh-my-fish
       mpv
-      # ascii
-      # kdePackages.kasts
-      # proton-vpn
-      # tor-browser
-      # yt-dlp
-      # kdePackages.filelight
-      # inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-      # inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
+      aria2
+      ascii
+      tor-browser
+      onionshare-gui
+      yt-dlp
+      kdePackages.filelight
+      inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
   };
+  programs.firefox.enable = true;
   programs.fish.enable = true;
-  # programs.firefox.enable = true;
 }

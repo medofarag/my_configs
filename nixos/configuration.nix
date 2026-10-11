@@ -30,15 +30,6 @@
 
       # gaming
       ./gaming.nix
-
-      # office
-      ./office.nix
-
-      # creativity
-      ./creativity.nix
-
-      # Apparmor
-      # ./apparmor.nix
     ];
 
   nix.gc = {
@@ -101,69 +92,78 @@
 
   environment = {
     sessionVariables = {
-      # QT_QPA_PLATFORMTHEME = "qt6ct";
+      QT_QPA_PLATFORMTHEME = "qt6ct";
     };
   };
 
   nix.settings.require-sigs = true;
 
   security.polkit.enable = true;
-  security.sudo.enable = false;
-  security.doas.enable = true;
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+  programs.appimage.package = pkgs.appimage-run.override {
+    extraPkgs = pkgs: [
+      pkgs.icu
+      pkgs.libxcrypt-legacy
+      pkgs.python312
+      # pkgs.python312Packages.torch
+    ]; 
+  };
   nixpkgs.config.permittedInsecurePackages = [
+    "ventoy-1.1.12"
   ];
-
+  
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "obsidian"
-    "mongodb-ce"
     "corefonts"
+    "ventoy-full"
+    "ventoy"
   ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   
   environment.systemPackages = with pkgs; [
-
-    fribidi
-
-    doas-sudo-shim
-
     # media control
     playerctl
 
+    ventoy-full
+
     # cli tools
-    btop
-    fastfetch
-    vnstat
-    # nethogs
+    btop fastfetch vnstat nethogs
     zoxide
 
     ffmpeg
-    unrar-free
-    zip
-    unzip
-    p7zip
+    
+    unrar-free zip unzip p7zip
 
     # Disk
-    # cryptsetup
-
-    /*
-    gparted
-    btrfs-progs
-    ntfs3g
-    exfatprogs
-    dosfstools
-    xfsprogs
-    */
+    cryptsetup ventoy-full gparted btrfs-progs ntfsprogs exfatprogs dosfstools xfsprogs
 
     nix-search
     # font-manager
     wl-clipboard
+
+    # Office
+    onlyoffice-desktopeditors libreoffice thunderbird-latest-bin obsidian
+    drawy papers pdfarranger gnome-maps ascii-draw pinta
+    # constrict
+    # curtail
+    # upscayl
+    bobby # view sqlite database
+
+    # Science
+    /* sage */ octave
+    qucs-s ngspice gnuradio # kicad
+    (pkgs.python3.withPackages (ps: with ps; [
+      jupyterlab ipykernel numpy pandas scipy matplotlib
+      # conda
+    ]))
   ];
 
   # Enable flakes

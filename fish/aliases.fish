@@ -7,8 +7,9 @@ alias ... 'cd ../..'
 alias edit '$EDITOR'
 alias weather 'curl wttr.in'
 alias pray 'node ~/scripts/prayertime.js'
-alias backup 'bash ~/scripts/backup_my_configs.sh'
+alias backup 'sh ~/scripts/backup_my_configs.sh'
 alias runz "run0 --background="""
+alias sudo "run0 --background="""
 
 # tmux
 alias tmuxac 'tmux new -A -s'

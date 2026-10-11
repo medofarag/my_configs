@@ -2,11 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    noctalia
     gpu-screen-recorder
     
     # required by screen toolkits
-    /*
     grim
     slurp
     wl-clipboard
@@ -23,6 +22,7 @@
     hyprpicker
     gifski
     zenity
-    */
+
+    # bazaar
   ];
 }

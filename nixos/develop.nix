@@ -8,16 +8,16 @@
     wget
     lua
     python313
-    # openjdk
-    # maven
-    # nodejs
+    openjdk
+    maven
+    nodejs
     # nasm
     # rustup
     # sqlite
     tokei
     bat
     eza
-    # ripgrep
+    ripgrep
     fd
     fzf
     git

@@ -11,25 +11,27 @@
 
   environment.systemPackages = with pkgs; [
     flameshot
-    sakura
+    foot
     wl-clipboard
     loupe
 
-    superfile
-    exiftool
-    
     xwayland-satellite
 
     # theme
     kdePackages.breeze
     kdePackages.breeze-gtk
     kdePackages.breeze-icons
-    # kdePackages.qt6ct
-    # libsForQt5.qt5ct
+    adwaita-icon-theme
+    adwaita-fonts
+    adw-gtk3
+    papirus-icon-theme
+    papirus-folders
+    qt6Packages.qt6ct
+    libsForQt5.qt5ct
     nwg-look
 
     # Essential apps
-    pcmanfm
+    nautilus
     xarchiver
     ffmpegthumbnailer
     libappimage

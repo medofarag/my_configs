@@ -5,13 +5,15 @@
     wine
     winetricks
     lutris-free
-    # chess-tui
-    # stockfish
-    /*
-    xonotic
-    neverball
-    openttd
-    luanti
-    */
+    # flightgear
+    # redeclipse
+    # megaglest
+    # mindustry-wayland
+    chess-tui
+    stockfish
+    # xonotic
+    # zeroad
+    # neverball
+    # luanti
   ];
 }

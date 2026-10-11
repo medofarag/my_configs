@@ -2,10 +2,11 @@ source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export BROWSER=helium
-export FILEMANGER=pcmanfm
-export EDITOR=nvim
-export VISUAL=nvim
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
+export TERM=foot
+export EDITOR=hx
+export VISUAL=hx
 
 # remove welcome message
 set -g fish_greeting

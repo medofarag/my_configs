@@ -1,6 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    noctalia-greeter
+  ];
+
   services.displayManager.noctalia-greeter = {
     enable = true;
     settings = {

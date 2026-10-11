@@ -26,6 +26,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     */
+
+    sable = {
+      url = "github:SableClient/Sable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
