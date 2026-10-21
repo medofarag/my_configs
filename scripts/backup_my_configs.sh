@@ -3,7 +3,7 @@ cp -r /home/medo/.config/niri /home/medo/my_configs/
 cp -r /home/medo/.config/noctalia /home/medo/my_configs/
 cp -r /home/medo/.config/fish /home/medo/my_configs/
 cp -r /home/medo/.config/bash /home/medo/my_configs/
-cp -r /home/medo/.config/scripts /home/medo/my_configs/
+cp -r /home/medo/scripts /home/medo/my_configs/
 cp -r /home/medo/.config/tmux /home/medo/my_configs/
 cp -r /home/medo/.config/kastsrc /home/medo/my_configs/
 cp -r /home/medo/.config/sway /home/medo/my_configs/
