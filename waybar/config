@@ -3,35 +3,65 @@
   "spacing": 2,
   "height": 0,
   "margin-bottom": 0,
-  "margin-top": 3,
+  "margin-top": 2,
   "position": "top",
-  "margin-right": 3,
-  "margin-left": 3,
+  "margin-right": 2,
+  "margin-left": 2,
   "modules-left": [
+    "custom/powermenu",
     "sway/workspaces",
-    "sway/mode"
+    "sway/mode",
+    "custom/recorder",
+    "custom/qrcode",
+    "custom/colorpick",
+    "tray"
   ],
-  "modules-center": [
-  ],
+  "modules-center": [],
   "modules-right": [
-    "tray",
+    "cpu",
+    "memory",
+    "temperature",
     "network",
     "sway/language",
     "pulseaudio",
+    "custom/weather",
     "clock"
   ],
+  "custom/powermenu": {
+    "format": "⏻",
+    "on-click": "bash /home/$USER/scripts/powermenu.sh"
+  },
+  "custom/recorder": {
+    "format": "🎥",
+    "on-click": "blue-recorder"
+  },
+  "custom/qrcode": {
+    "format": "🔳",
+    "on-click": "bash /home/$USER/scripts/qrcode.sh"
+  },
+  "custom/colorpick":{
+    "format": "🎨",
+    "on-click": "bash /home/$USER/scripts/picker.sh"
+  },
+  "custom/weather": {
+    "exec": "wttrbar",
+    "interval": 3600, // Update every hour (seconds)
+    "return-type": "json",
+    "format": "{}", // wttrbar outputs the temperature as the main text
+    "tooltip": true
+  },
   "sway/language": {
-  "format": "{}",
-  "tooltip-format" : "{}",
-  "format-en": "US",
-  "format-ar": "AR"
+    "format": "{}",
+    "tooltip-format": "{}",
+    "format-en": "US",
+    "format-ar": "AR"
   },
   "tray": {
     "spacing": 10,
     "tooltip": false
   },
   "clock": {
-    "format": "  🕑 {:%H:%M 📅 %Y/%m/%d}",
+    "format": "󰥔 {:%H:%M 󰃭 %Y/%m/%d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "on-click": "gsimplecal",
     "calendar": {
@@ -41,22 +71,48 @@
       }
     }
   },
+  "cpu": {
+    "format": "CPU:{usage}%",
+    "interval": 2,
+    "on-click": "sakura -x btop"
+  },
+  "memory": {
+    "format": "RAM:{percentage}%",
+    "interval": 2,
+    "on-click": "sakura -x btop"
+  },
+  "temperature": {
+    "format": "Temp:{temperatureC}°C",
+    "critical-threshold": 80,
+    "interval": 2,
+    "on-click": "sakura -x btop"
+  },
   "network": {
-    "format-wifi": " {bandwidthDownBits}",
-    "format-ethernet": " {bandwidthDownBits}",
-    "format-disconnected": "󰤮 No Network",
-    "interval": 5,
-    "tooltip": false
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-disconnected": "󰖪 Disconnected",
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ]
   },
   "pulseaudio": {
-    "scroll-step": 5,
-    "max-volume": 200,
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    // "format-icons": ["🔈", "🔉", "🔊"],
-    "nospacing": 1,
-    "format-muted": " ",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ],
+      "headphone": "󰋋",
+      "headset": "󰋎",
+      "bluetooth": "󰂰"
+    },
     "on-click": "pavucontrol",
-    "tooltip": false
+    "scroll-step": 5
   }
-},
+}

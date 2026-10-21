@@ -6,7 +6,7 @@ alias .. 'cd ..'
 alias ... 'cd ../..'
 alias edit '$EDITOR'
 alias weather 'curl wttr.in'
-alias pray 'node ~/scripts/prayertime.js'
+alias pray 'node ~/scripts/prayertime/prayertime.js'
 alias backup 'sh ~/scripts/backup_my_configs.sh'
 alias runz "run0 --background="""
 alias sudo "run0 --background="""
@@ -24,3 +24,10 @@ alias gcl 'git config'
 alias gaa 'git add .'
 alias gcm 'git commit -m'
 alias gpo 'git push origin'
+
+# apk
+alias pkg-i "doas apk add"
+alias pkg-r "doas apk del"
+alias pkg-s "apk search"
+alias pkg-u "doas apk update"
+alias pkg-uu "doas apk update && apk upgrade --available"

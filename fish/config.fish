@@ -1,8 +1,14 @@
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+set -gx PATH $PATH $HOME/.cargo/bin:$PATH
+set -gx PATH $PATH unix://$XDG_RUNTIME_DIR/docker.sock
+
+set -gx PATH $PATH /var/lib/flatpak/exports/bin
+set -gx PATH $PATH $HOME/.local/share/flatpak/exports/bin
+
+export QT_QPA_PLATFORM=xcb
+#set -gx QT_QPA_PLATFORM qt6ct
 
 export TERM=foot
 export EDITOR=hx
@@ -10,18 +16,9 @@ export VISUAL=hx
 
 # remove welcome message
 set -g fish_greeting
-set -gx QT_QPA_PLATFORM wayland
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# eval "$(ssh-agent -s)"
 eval "$(zoxide init fish)"
-
-# pnpm
-set -gx PNPM_HOME "/home/medo/.local/share/pnpm"
-if not string match -q -- "$PNPM_HOME/bin" $PATH
-    set -gx PATH "$PNPM_HOME/bin" $PATH
-end
-# pnpm end
