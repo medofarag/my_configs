@@ -14,6 +14,7 @@ exec syncthing serve --no-browser
 exec xwayland-sattellite
 exec wl-paste --type text --watch cliphist store
 exec wl-paste --type image --watch cliphist store
+exec kdeconnectd
 
 ### Variables
 #
@@ -284,7 +285,7 @@ bindsym $mod+r mode "resize"
     # bindsym PrintScreen exec flameshot full
     
     # Flamshot GUI
-    bindsym $mod+shift+x exec flameshot gui
+    bindsym $mod+shift+x exec grim -g $(slurp)
 #
 # Status Bar:
 #

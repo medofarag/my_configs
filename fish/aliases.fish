@@ -9,7 +9,6 @@ alias weather 'curl wttr.in'
 alias pray 'node ~/scripts/prayertime/prayertime.js'
 alias backup 'sh ~/scripts/backup_my_configs.sh'
 alias runz "run0 --background="""
-alias sudo "run0 --background="""
 
 # tmux
 alias tmuxac 'tmux new -A -s'

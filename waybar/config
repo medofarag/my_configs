@@ -18,6 +18,7 @@
   ],
   "modules-center": [],
   "modules-right": [
+    "custom/prayer",
     "cpu",
     "memory",
     "temperature",
@@ -27,6 +28,19 @@
     "custom/weather",
     "clock"
   ],
+  "custom/prayer": {
+    "exec": "~/.config/waybar/scripts/prayer_times",
+    "return-type": "json",
+    "interval": 60,
+    "format": "{}",
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/prayer_times rebuild",
+    "on-click-right": "~/.config/waybar/scripts/prayer_times fetch_missing",
+    "on-scroll-up": "~/.config/waybar/scripts/prayer_times up",
+    "on-scroll-down": "~/.config/waybar/scripts/prayer_times down",
+    "on-click-middle": "~/.config/waybar/scripts/prayer_times reset",
+    "signal": 9
+  },
   "custom/powermenu": {
     "format": "⏻",
     "on-click": "bash /home/$USER/scripts/powermenu.sh"

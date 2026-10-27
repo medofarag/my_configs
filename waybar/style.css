@@ -34,7 +34,8 @@ window#waybar {
 #custom-recorder,
 #custom-colorpick,
 #custom-powermenu,
-#custom-qrcode {
+#custom-qrcode,
+#custom-prayer {
   background-image: linear-gradient(to bottom, #141414 100%);
 
   margin: 1px;
@@ -46,6 +47,20 @@ window#waybar {
 
   border-style: none;
   transition-duration: 120ms;
+}
+
+#custom-prayer {
+    background-color: rgba(166, 227, 161, 0.15); /* Calm transparent green background */
+    color: #01B0E2; /* Blue */
+    font-weight: bold;
+    font-size: 10px;
+    padding: 0 10px;
+    margin: 4px 4px;
+    transition: all 0.3s ease;
+}
+
+#custom-prayer:hover {
+    color: #F9F9F9;
 }
 
 #custom-powermenu {
