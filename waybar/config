@@ -21,7 +21,6 @@
     "custom/prayer",
     "cpu",
     "memory",
-    "temperature",
     "network",
     "sway/language",
     "pulseaudio",
@@ -43,7 +42,7 @@
   },
   "custom/powermenu": {
     "format": "⏻",
-    "on-click": "bash /home/$USER/scripts/powermenu.sh"
+    "on-click": "bash ~/.config/waybar/scripts/powermenu.sh"
   },
   "custom/recorder": {
     "format": "🎥",
@@ -51,11 +50,11 @@
   },
   "custom/qrcode": {
     "format": "🔳",
-    "on-click": "bash /home/$USER/scripts/qrcode.sh"
+    "on-click": "bash ~/.config/waybar/scripts/qrcode.sh"
   },
   "custom/colorpick":{
     "format": "🎨",
-    "on-click": "bash /home/$USER/scripts/picker.sh"
+    "on-click": "bash ~/.config/waybar/scripts/picker.sh"
   },
   "custom/weather": {
     "exec": "wttrbar",
@@ -67,8 +66,8 @@
   "sway/language": {
     "format": "{}",
     "tooltip-format": "{}",
-    "format-en": "US",
-    "format-ar": "AR"
+    "format-en": "EN",
+    "format-ara": "AR"
   },
   "tray": {
     "spacing": 10,
@@ -102,16 +101,18 @@
     "on-click": "sakura -x btop"
   },
   "network": {
-    "format-wifi": "{icon} {essid}",
-    "format-ethernet": "󰈀 {ipaddr}",
-    "format-disconnected": "󰖪 Disconnected",
+    "format-wifi": "{icon}   {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "format-ethernet": "󰈀  {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "tooltip-format-wifi": "SSID: {essid}\nIP: {ipaddr}",
+    "tooltip-format-ethernet": "IF: {ifname}\nIP: {ipaddr}",
     "format-icons": [
       "󰤯",
       "󰤟",
       "󰤢",
       "󰤥",
       "󰤨"
-    ]
+    ],
+    "interval": 1
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
