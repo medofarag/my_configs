@@ -1,0 +1,81 @@
+#!/bin/bash
+
+read NAME
+echo hello $NAME
+
+# if condtion structure
+
+if [ $1 = medo ] || [ $1 -eq admin ]; then
+	echo "hello you are the boss here"
+elif [ $1 = help ]; then
+	echo "man just type your username"
+else
+	echo "I do not know who are you , but you are not the boss here"
+fi
+
+# if conditions 
+( "=" or "-eq" , ">" or "-gt" , "<" or "-lt" , "<=" or "-le" 
+, ">=" or "-ge" , and = && , or = ||)
+
+
+
+
+# switch case
+case $1 in
+	medo | admin)
+		echo "you are the boss here";;
+	help)
+		echo "man just type your name";;
+	*)
+		echo "go out";;
+esac
+
+
+
+
+# Arrays
+arr=(medo ko dido null me accurate)
+echo ${arr[0]}
+echo ${arr[4]}
+echo ${arr[@]}
+
+# for loops
+
+# Loop through a list of values
+
+for variable in value1 value2 value3; do
+    # commands to execute
+done
+
+# C-style for loop
+
+for (( i=0; i<5; i++ )); do
+    # commands to execute
+done
+
+# Loop with sequence {start..end}
+
+for i in {1..5}; do
+    echo "Number: $i"
+done
+
+# Loop with step value {start..end..step}
+
+for i in {0..10..2}; do
+    echo "Even number: $i"
+done
+
+
+
+
+# functions
+
+functionname(){
+	#functions
+	return 0 # exit code (optional)
+}
+
+#exit code is a variable stored in ? and you can call him with $?
+
+# for avoid change variable data by accident
+local variablename

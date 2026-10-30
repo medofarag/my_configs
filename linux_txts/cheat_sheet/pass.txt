@@ -1,0 +1,20 @@
+# for first time only
+>> pass init <puplic key>
+>> pass git init
+
+# cheat sheet
+>> pass generate personal/gaming/itch.io # generate a new password
+>> pass insert Education/engazhar # insert a new password
+>> pass edit Education/engazhar # edit a txt file to add meta or notes
+>> pass find itch.io # searching
+>> pass show # show all passwords
+>> pass grep # search with any meta data on encrypted file
+>> pass show -c github/personal # copy password
+>> pass rm github/personal # delete password
+>> pass mv github/personal develop/ # move
+>> pass mv github/personal github/work # rename
+>> pass git log # show modifications
+>> pass git revert HEAD # revert latest modifications
+>> pass git add origin git@github.com:username/reponame.git # set an online repo for backup
+>> pass git push origin main # backup
+>> pass git clone git@github.com:username/reponame.git ~/.password-store

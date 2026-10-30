@@ -1,0 +1,88 @@
+# systemd-journald Cheat Sheet
+
+## 🔧 Persistent Storage Management
+
+### Enable persistent logging
+>> sudo mkdir -p /var/log/journal
+>> sudo systemd-tmpfiles --create --prefix=/var/log/journal
+>> sudo journalctl --flush
+
+### Disable persistent logging (back to volatile)
+>> sudo rm -rf /var/log/journal
+>> sudo systemctl restart systemd-journald
+
+# Basic Log Viewing
+
+>> journalctl                      # Show all logs
+>> journalctl -f                   # Follow new logs (tail -f)
+>> journalctl -r                   # Show newest first (reverse)
+>> journalctl -n 50                # Show last 50 lines
+>> journalctl --since "today"      # Today's logs
+>> journalctl --since yesterday    # Yesterday's logs
+>> journalctl --since "1 hour ago" # Last hour only
+>> journalctl --since "2024-01-01" --until "2024-01-31"  # Time range
+
+# Filter by Service & Process
+
+>> journalctl -u nginx.service     # Specific service
+>> journalctl -u nginx -u ssh      # Multiple services
+>> journalctl _PID=1234            # Process ID
+>> journalctl /usr/bin/bash        # Executable path
+>> journalctl _UID=1000            # User ID
+>> journalctl _GID=1000            # Group ID
+
+# Filter by Boot
+
+>> journalctl --list-boots         # List all boots
+>> journalctl -b                   # Current boot
+>> journalctl -b -1                # Previous boot
+>> journalctl -b -2                # Two boots ago
+>> journalctl -b 0a1b2c3d          # Specific boot ID
+
+# Filter by Priority Level
+
+>> journalctl -p emerg             # 0 - Emergency (highest)
+>> journalctl -p alert             # 1 - Alert
+>> journalctl -p crit              # 2 - Critical
+>> journalctl -p err               # 3 - Error
+>> journalctl -p warning           # 4 - Warning
+>> journalctl -p notice            # 5 - Notice
+>> journalctl -p info              # 6 - Information
+>> journalctl -p debug             # 7 - Debug (lowest)
+>> journalctl -p 3                 # Use numbers as well
+
+# Advanced Options
+
+>> journalctl -o short             # Default format
+>> journalctl -o verbose           # Show all fields
+>> journalctl -o json-pretty       # Pretty JSON format
+>> journalctl -o cat               # No metadata
+>> journalctl --no-pager           # Without less (for piping)
+>> journalctl --output-fields=MESSAGE,PID  # Specific fields only
+
+# Size Management & Cleaning
+
+## Show disk usage
+>> journalctl --disk-usage
+
+## Clean logs
+>> journalctl --vacuum-size=500M    # Keep last 500MB
+>> journalctl --vacuum-time=30d     # Keep last 30 days
+>> journalctl --vacuum-files=10     # Keep last 10 files
+
+## Delete everything
+>> sudo journalctl --rotate         # Rotate active files
+>> sudo journalctl --vacuum-time=1s # Actually delete all
+
+# Configuration
+
+## Edit configuration
+>> sudo nano /etc/systemd/journald.conf
+
+## Restart service after changes
+>> sudo systemctl restart systemd-journald
+
+## Check service status
+>> systemctl status systemd-journald
+>> systemctl is-active systemd-journald
+

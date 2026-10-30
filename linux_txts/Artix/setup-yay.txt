@@ -1,0 +1,6 @@
+>> sudo pacman -S --needed base-devel git
+>> mkdir -p ~/builds
+>> cd ~/builds
+>> git clone https://aur.archlinux.org/yay.git
+>> cd yay
+>> makepkg -si

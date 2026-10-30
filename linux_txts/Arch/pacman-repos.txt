@@ -1,0 +1,12 @@
+>> sudo vim /etc/pacman.conf
+
+Go to the end of file and uncomment these lines
+
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist

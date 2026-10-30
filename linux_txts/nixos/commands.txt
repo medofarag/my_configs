@@ -1,0 +1,24 @@
+# generations
+>> nixos-rebuild list-generations                    # show all generations.
+>> sudo nixos-rebuild switch --rollback              # rollback to the previous generation.
+>> sudo nix-collect-garbage -d                       # delete old generations.
+>> sudo nixos-rebuild build --rollback               # rollback to old generation without apply it permanently.
+>> sudo nixos-rebuild switch --rollback -p 2         # rollback to a specefic generation.
+>> sudo nixos-rebuild boot --install-bootloader      # install bootloader if you change it.
+
+# update
+>> nix-channel --update
+>> sudo nixos-rebuild boot
+
+## or in one step
+>> sudo nixos-rebuild switch --upgrade
+
+# upgrade
+>> sudo nix-channel --add https://nixos.org/channels/nixos-25.11 nixos # replace 25.11 with version you want to upgrade to.
+>> sudo nix-channel --update
+>> sudo NIXPKGS_ALLOW_INSECURE=1 nixos-rebuild boot --upgrade-all
+
+
+# definations
+>> nixos-rebuild switch # applying changes immediatly
+>> nixos-rebuild boot   # applying changes after the next boot

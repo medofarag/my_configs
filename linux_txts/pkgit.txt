@@ -1,0 +1,29 @@
+# install
+ # from source
+ >> git clone https://github.com/dacctal/pkgit
+ >> cd pkgit
+ >> ./install-system.sh # on system level
+ >> ./install-user.sh # or on user level
+
+ # or with nimble
+ >> nimble install pkgit # install nimble first
+
+# Post-install
+ >> pkgit a https://github.com/dacctal/pkgit
+
+# Options
+
+subcommand 	long command 	description
+a [url.git] 	add [url, file] 	add a repo/repopkg
+i [pkgs] 	install [pkgs, urls] 	install a package/repo
+* -t:[tag] 	--tag:[tag] 	specify a tag
+r [pkgs] 	remove [pkgs] 	removes an installed package
+* -r:[repo] 	--repo:[repo] 	remove a repo
+f 	files 	list all files of a package
+s [pkgs] 	search [pkgs] 	search for packages
+l 	list 	list installed packages
+u 	update 	updates all installed packages
+
+flag 	long flag 	description
+-h 	--help 	display the help message
+-v 	--version 	display version number

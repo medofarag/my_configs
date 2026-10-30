@@ -1,0 +1,14 @@
+# install dependings
+>> pacman -S libxml2 libcurl
+
+# install libbeaker
+>> git clone https://git.bwaaa.monster/beaker
+>> cd beaker
+>> make
+>> sudo make install
+
+# install omnisearch
+>> git clone https://git.bwaaa.monster/omnisearch
+>> cd omnisearch
+>> make
+>> make install-<init> # replace <init> with your init system

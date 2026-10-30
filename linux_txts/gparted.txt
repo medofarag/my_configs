@@ -1,0 +1,6 @@
+gparted
+btrfs-progs --> btrfs
+ntfs-3g --> ntfs
+exfat-utils exfatprogs --> exfat
+dosfstools , mtools --> vfat
+xfsprogs --> xfs

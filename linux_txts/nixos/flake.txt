@@ -1,0 +1,131 @@
+================================================================================
+                    NIXOS FLAKES - CHEAT SHEET
+================================================================================
+
+DAILY COMMANDS
+-------------------------------------------------------------------------------
+Rebuild & switch (most common):
+    cd /etc/nixos && sudo nixos-rebuild switch --flake .#my-system
+
+Test build (no apply):
+    sudo nixos-rebuild build --flake .#my-system
+
+Rollback to previous generation:
+    sudo nixos-rebuild switch --rollback
+
+
+WEEKLY COMMANDS
+-------------------------------------------------------------------------------
+Clean old garbage:
+    sudo nix-collect-garbage --delete-old
+
+List generations:
+    sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+
+
+MONTHLY COMMANDS
+-------------------------------------------------------------------------------
+Update all inputs (stable):
+    nix flake update && sudo nixos-rebuild switch --flake .#my-system
+
+Update only nixpkgs:
+    nix flake lock --update-input nixpkgs
+
+
+================================================================================
+                           DO THIS / DON'T DO THIS
+================================================================================
+
+✅ DO THIS DAILY (only if you changed config):
+    sudo nixos-rebuild switch --flake .#my-system
+
+✅ DO THIS WEEKLY:
+    nix-collect-garbage -d
+
+✅ DO THIS MONTHLY:
+    nix flake update --update-input nixpkgs
+    sudo nixos-rebuild switch --flake .#my-system
+
+❌ DON'T DO THIS DAILY:
+    nix flake update
+    Reason: Downloads huge data unnecessarily - only when you need latest versions
+
+
+================================================================================
+                           EXTRA USEFUL COMMANDS
+================================================================================
+
+See what changed:
+    nix flake metadata
+
+Test in VM:
+    nixos-rebuild build-vm --flake .#my-system
+
+Rollback to specific generation:
+    sudo nixos-rebuild switch --rollback --profile /nix/var/nix/profiles/system
+
+Keep only last 5 generations:
+    sudo nix-env --delete-generations +5 --profile /nix/var/nix/profiles/system
+
+Show specific generation content:
+    sudo nix-env --list-generations --profile /nix/var/nix/profiles/system | grep "Generation"
+
+Save config in Git:
+    cd /etc/nixos
+    sudo git init
+    sudo git add .
+    sudo git commit -m "initial config"
+
+
+================================================================================
+                           PRACTICAL SCENARIOS
+================================================================================
+
+SCENARIO 1: Install a new program
+    1. Edit configuration.nix: sudo nano /etc/nixos/configuration.nix
+    2. Add: pkgs.program_name
+    3. Rebuild: sudo nixos-rebuild switch --flake .#my-system
+
+SCENARIO 2: After a week of use, want to update
+    cd /etc/nixos
+    sudo nixos-rebuild switch --flake .#my-system
+
+SCENARIO 3: Last update broke something
+    sudo nixos-rebuild switch --rollback
+    # Fix configuration.nix then:
+    sudo nixos-rebuild switch --flake .#my-system
+
+SCENARIO 4: Low disk space
+    sudo nix-collect-garbage -d
+    # Or keep only last 5 generations:
+    sudo nix-env --delete-generations +5 --profile /nix/var/nix/profiles/system
+
+
+================================================================================
+                           EXPECTED DOWNLOAD SIZE
+================================================================================
+
+First build (from scratch):     Large (10-15 GB)
+Next day (normal rebuild):      Small (100-500 MB)
+After nix flake update:         Medium (1-3 GB)
+After long time on unstable:    Large again
+
+
+================================================================================
+                         MAINTENANCE SCHEDULE
+================================================================================
+
+Daily:      sudo nixos-rebuild switch --flake .#my-system
+Weekly:     nix-collect-garbage -d
+Monthly:    nix flake update && sudo nixos-rebuild switch --flake .#my-system
+On demand:  sudo nixos-rebuild switch --rollback
+
+
+================================================================================
+                              IMPORTANT NOTES
+================================================================================
+
+- No need for daily updates - NixOS is NOT like Windows
+- If using nixos-unstable, expect larger updates
+- Rollback is instantaneous - you can undo any update immediately
+- After the first build, everything will be faster

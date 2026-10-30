@@ -1,0 +1,27 @@
+>> sudo vim /etc/pacman.conf
+
+Go to the end of file and uncomment these lines
+
+# Artix
+[system]
+Include = /etc/pacman.d/mirrorlist
+
+[world]
+Include = /etc/pacman.d/mirrorlist
+
+[galaxy]
+Include = /etc/pacman.d/mirrorlist
+
+[lib32]
+Include = /etc/pacman.d/mirrorlist
+
+# Arch
+[extra]
+Include = /etc/pacman.d/mirrorlist-arch
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist-arch
+
+>> wget https://archlinux.org/mirrorlist/all/ -O /etc/pacman.d/mirrorlist-arch
+
+# see pacman-key.txt

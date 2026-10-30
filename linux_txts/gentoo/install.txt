@@ -1,0 +1,228 @@
+Gentoo Installation Guide
+(x86_64 - OpenRC - glibc - Separate /home partition - Linux-source kernel - NetworkManager for Wi-Fi - Bootable system)
+
+1. Pre-Installation: Booting and Network Setup
+Boot from the Gentoo Minimal Installation CD or any other live Linux environment.
+
+Check your network interfaces:
+
+you can connect with iwctl in arch live environment
+
+3. Disk Preparation (Partitioning)
+Assuming your disk is /dev/sda. We'll create 3 partitions:
+
+Partition	Size	Type	Mount Point
+/dev/sda1	1GB	EFI (or BIOS boot)	/boot (or /efi)
+/dev/sda2	Remaining - 20GB	Linux filesystem	/ (root)
+/dev/sda3	20GB	Linux filesystem	/home
+you can use cfdisk
+
+4. Formatting and Mounting Partitions
+bash
+# Format the root partition (ext4)
+mkfs.ext4 /dev/sda2
+
+# Format the /home partition
+mkfs.ext4 /dev/sda3
+
+# Format the boot partition (FAT32 for UEFI systems)
+mkfs.fat -F 32 /dev/sda1
+
+# Mount the partitions
+mount /dev/sda2 /mnt/gentoo
+mkdir /mnt/gentoo/boot
+mount /dev/sda1 /mnt/gentoo/boot
+mkdir /mnt/gentoo/home
+mount /dev/sda3 /mnt/gentoo/home
+5. Downloading Stage3 and Portage
+Download the Stage3 tarball (OpenRC, glibc, x86_64):
+
+bash
+cd /mnt/gentoo
+wget https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-openrc/stage3-amd64-openrc-*.tar.xz
+Extract the Stage3:
+
+bash
+tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+Download Portage tree:
+
+bash
+wget https://distfiles.gentoo.org/releases/snapshots/current/portage-latest.tar.xz
+tar xvf portage-latest.tar.xz -C /mnt/gentoo/usr
+
+6. Entering the Chroot Environment
+bash
+cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+chroot /mnt/gentoo /bin/bash
+source /etc/profile
+export PS1="(chroot) ${PS1}"
+
+7. Configuring Portage and make.conf
+bash
+nano /etc/portage/make.conf
+Add these lines (adjust CPU cores for faster compilation):
+
+make.conf
+COMMON_FLAGS="-march=native -O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+MAKEOPTS="-j$(nproc)"   # Number of CPU cores
+EMERGE_DEFAULT_OPTS="--jobs $(nproc) --load-average $(nproc)"
+
+8. Syncing and Selecting Profile
+bash
+mirrorselect -i -o >> /etc/portage/make.conf
+emerge-webrsync
+eselect profile list   # Choose a suitable profile (e.g., default/linux/amd64/17.1)
+eselect profile set X  # Replace X with the profile number
+9. Timezone and Locale Settings
+bash
+echo "Asia/Riyadh" > /etc/timezone   # Or your timezone
+emerge --config sys-libs/timezone-data
+
+nano /etc/locale.gen
+Add:
+
+text
+en_US.UTF-8 UTF-8
+ar_EG.UTF-8 UTF-8
+Then:
+
+bash
+locale-gen
+eselect locale set en_US.UTF-8
+env-update && source /etc/profile
+10. Kernel Compilation (linux-source)
+bash
+emerge --ask sys-kernel/gentoo-sources
+cd /usr/src/linux
+make menuconfig
+Ensure Wi-Fi support is enabled in the kernel:
+
+Navigate to:
+
+text
+Device Drivers  --->
+  [*] Network device support  --->
+    [*]   Wireless LAN  --->
+      <*>   Your wireless driver (e.g., Intel Wireless WiFi, Atheros, etc.)
+Also enable:
+
+text
+[*] Networking support  --->
+  [*]   Wireless  --->
+    <*>   cfg80211 - wireless configuration API
+    <*>   mac80211
+Compile and install the kernel:
+
+bash
+make -j$(nproc) && make modules_install
+make install   # Copies kernel to /boot automatically
+11. Installing System Tools
+bash
+emerge --ask sys-fs/e2fsprogs   # For ext4 partitions
+emerge --ask sys-apps/dhcpcd    # For DHCP (optional with NetworkManager)
+emerge --ask net-wireless/iw net-wireless/wpa_supplicant   # Required for Wi-Fi
+Now, install NetworkManager (our primary network manager):
+
+bash
+emerge --ask net-misc/networkmanager
+This will also pull in dbus as a dependency automatically.
+
+12. Configuring fstab
+bash
+nano /etc/fstab
+Add:
+
+fstab
+/dev/sda2   /         ext4    defaults,noatime  0 1
+/dev/sda1   /boot     vfat    defaults,noatime  0 2
+/dev/sda3   /home     ext4    defaults,noatime  0 2
+13. Hostname and Network Configuration (for NetworkManager)
+bash
+echo "gentoo-pc" > /etc/hostname
+NetworkManager handles everything automatically, so we don't need to configure /etc/conf.d/net. However, we must ensure that NetworkManager starts at boot and that other network services are disabled:
+
+bash
+# Disable any default networking services (if they exist)
+rc-update del net.eth0 default 2>/dev/null
+rc-update del dhcpcd default 2>/dev/null
+
+# Add NetworkManager to default runlevel
+rc-update add NetworkManager default
+
+# Add wpa_supplicant (NetworkManager will control it)
+rc-update add wpa_supplicant default
+Important: For Wi-Fi to work with NetworkManager, you also need:
+
+bash
+emerge --ask net-wireless/wpa_supplicant
+NetworkManager will use wpa_supplicant as its backend for Wi-Fi by default.
+
+14. Installing Bootloader (GRUB)
+For UEFI systems:
+
+bash
+emerge --ask sys-boot/efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Gentoo
+grub-mkconfig -o /boot/grub/grub.cfg
+For BIOS (Legacy) systems:
+
+bash
+grub-install --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+15. Root Password and Clean Exit
+bash
+passwd   # Set root password
+exit
+umount -l /mnt/gentoo/dev /mnt/gentoo/proc /mnt/gentoo/sys
+umount -R /mnt/gentoo
+reboot
+16. Post-Installation: Using NetworkManager
+After rebooting into your new Gentoo system:
+
+Check NetworkManager status:
+
+bash
+rc-service NetworkManager status
+Connect to Wi-Fi using command line (if you don't have a desktop environment yet):
+
+bash
+nmcli device status              # List devices
+nmcli device wifi list           # Scan for networks
+nmcli device wifi connect "SSID" password "PASSWORD"
+If you have a desktop environment (like GNOME, KDE, XFCE), you can use their NetworkManager applets for a graphical interface.
+
+To ensure NetworkManager auto-starts:
+
+bash
+rc-update add NetworkManager default
+💡 Important Notes & Tips
+NetworkManager and dbus: NetworkManager requires dbus. Make sure the dbus service is also running and added to the default runlevel:
+
+bash
+rc-update add dbus default
+Kernel Configuration: If you compiled Wi-Fi drivers as modules (<M> instead of <*> in menuconfig), ensure they load automatically by adding them to /etc/modules-load.d/wifi.conf:
+
+bash
+echo "iwlwifi" > /etc/modules-load.d/wifi.conf   # Replace with your driver
+Alternative: Use iwd with NetworkManager: NetworkManager can also use iwd as a backend instead of wpa_supplicant. If you prefer:
+
+bash
+emerge --ask net-wireless/iwd
+Then edit /etc/NetworkManager/NetworkManager.conf and add:
+
+[device]
+wifi.backend=iwd
+NetworkManager is "bloated"? It's true that NetworkManager pulls in more dependencies (especially dbus and several libraries). However, it provides seamless automatic management, especially for Wi-Fi. If you prefer maximum lightness, stick with netifrc + wpa_supplicant. But for most users, the convenience of NetworkManager is worth the extra packages.
+
+If you face Wi-Fi issues after boot: Check if the wireless interface is up:
+
+bash
+ip link set wlp2s0 up
+nmcli device connect wlp2s0

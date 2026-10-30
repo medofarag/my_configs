@@ -1,0 +1,6 @@
+for pkg in $(dpkg-query -f '${Package}\n' -W); do
+    section=$(dpkg-query -f '${Section}' -W $pkg 2>/dev/null || echo "")
+    if echo "$section" | grep -qE "(non-free|contrib)"; then
+        echo "$pkg: $section"
+    fi
+done

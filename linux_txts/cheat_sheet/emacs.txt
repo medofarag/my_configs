@@ -1,0 +1,45 @@
+EMACS CHEAT SHEET
+
+C-g . . . . . . . Stop bothering me
+C-x C-c . . . . . Exit Emacs
+
+C-x C-f . . . . . Find File
+C-x k . . . . . . Kill Buffer
+C-x b . . . . . . Load Buffer
+C-x o . . . . . . Next Buffer
+C-x left/right  . Next/Previous buffer
+C-x [0-3] . . . . Fiddle with buffer views
+
+M-g g . . . . . . Goto Line
+C-a . . . . . . . Beginning of line
+C-e . . . . . . . End of line
+C-v . . . . . . . Page down
+M-v . . . . . . . Page up
+C-s . . . . . . . Search in buffer
+C-x C-s . . . . . Save buffer
+
+C-space . . . . . Set mark
+C-w . . . . . . . Cut
+M-w . . . . . . . Copy
+C-y . . . . . . . Paste
+
+M-x things:
+M-x shell . . . . . . Open Shell
+M-p . . . . . . . . . Previous shell command
+M-x replace-string  . Find/Replace in file
+M-x rgrep . . . . . . Find in folders
+M-x list-packages . . Package Manager
+
+Magit:
+s . . . . Stage
+u . . . . Unstage
+c . . . . Commit
+k . . . . Discard modification
+P . . . . Push
+F . . . . Pull
+C-c C-c . Save commit message
+
+Dired Mode:
+m . . . Mark file
+u . . . Unmark file
+! . . . Perform shell command on file(s)

@@ -1,0 +1,6 @@
+# export key
+gpg --export-secret-keys --armor --export-options backup --output my-private-key.asc "usename@email.com"
+gpg --export --armor --output my-public-key.asc "username@email.com"
+# import key
+gpg --import --import-options restore my-private-key.asc
+gpg --import my-public-key.asc

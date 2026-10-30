@@ -1,0 +1,5 @@
+for see options
+
+ls /usr/share/nano/
+
+echo include /usr/share/nano/"yourchoose.nanorc" > ~/.nanorc

@@ -1,0 +1,7 @@
+plugin noctalia/screen_recorder:service all start	                Start recording
+plugin noctalia/screen_recorder:service all stop	                Stop recording
+plugin noctalia/screen_recorder:service all toggle	              Start or stop recording
+plugin noctalia/screen_recorder:service all replay-start	        Start the replay buffer
+plugin noctalia/screen_recorder:service all replay-stop	          Stop the replay buffer
+plugin noctalia/screen_recorder:service all replay-toggle	        Start or stop the replay buffer
+plugin noctalia/screen_recorder:service all replay-save	          Save the last buffered seconds

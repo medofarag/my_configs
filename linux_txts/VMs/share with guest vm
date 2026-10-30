@@ -1,0 +1,54 @@
+on details on guest vm you create
+on the side panel
+select "Memory"
+"Enable shared memory"
+
+then select "add Hardware"
+on side panel of "add hardware"
+
+select "Filesystem"
+select Driver: virtiofs
+select source path : path/to/share/folderwouwant
+select target path : $anyname      #this will used on vm
+
+on the guest
+>> mount --mkdir -t virtiofs $anyname /mnt/$anyname
+
+
+
+
+# Windows Guests
+
+Host Steps
+
+    Create a /shared/folder/on/host on the Host.
+    Open VM settings > Memory and enable shared memory or add:
+
+<memoryBacking>
+  <source type="memfd"/>
+  <access mode="shared"/>
+</memoryBacking>
+
+    Add Hardware - Filesystem:
+
+    Change source dir and target dir to fit your setup
+
+<filesystem type="mount" accessmode="passthrough">
+  <driver type="virtiofs" queue="1024"/>
+  <source dir="/shared/folder/on/host"/>
+  <target dir="shared-folder-name-on-guest"/>
+  <address type="pci" domain="0x0000" bus="0x06" slot="0x00" function="0x0"/>
+</filesystem>
+
+    if you using nixos you must add to the previous config:  
+    <binary path="/run/current-system/sw/bin/virtiofsd"/> 
+    
+    Download WinFsp on windows machine
+    https://github.com/winfsp/winfsp/releases/tag/v2.1
+
+    Start Windows VM
+
+Windows VM Steps
+
+    Open Services and find VirtIO-FS Service set it to Automatic and start it.
+    Restart

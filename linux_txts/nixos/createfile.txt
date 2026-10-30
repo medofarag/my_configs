@@ -1,0 +1,10 @@
+# Create the file and set permissions
+sudo echo "your-strong-password" | sudo tee /etc/secrets/freshrss
+sudo chown freshrss:freshrss /etc/secrets/freshrss
+sudo chmod 400 /etc/secrets/freshrss
+
+# also you can use on configuration
+{
+  environment.etc."freshrss-admin-pass".text = "PWD";
+}
+

@@ -1,0 +1,50 @@
+Step 1: Download the Arch Linux ISO
+
+You can download the ISO from the official website. Both direct download and torrent links are available.
+https://archlinux.org/download/
+
+Step 2: Create a live USB of Arch Linux
+
+You will have to create a live USB of Arch Linux from the ISO you just downloaded.
+You may use the Etcher GUI tool to create the live USB. It is available for both Windows and Linux.
+
+Alternatively, if you are on Linux, you can use the dd command to create a live USB. Replace /path/to/archlinux.iso with the path where you have downloaded the ISO file, and /dev/sdx with your USB drive in the example below. You can get your drive information using lsblk command.
+
+>> dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress && sync
+
+Step 3: Boot from the live USB
+
+Select Boot Arch Linux (x86_64). After various checks, Arch Linux will boot to the login prompt with the root user.
+
+Step 4: Partition the disks
+
+use cfisk
+
+Some steps are different for UEFI and non-UEFI systems.You should verify if you have UEFI enabled system or not. Use this command:
+
+>> ls /sys/firmware/efi/efivars
+
+1.for EFI (1GB) with type EFI partition (If you use UEFI but If you use legacy boot. you do not need it.).
+2.for root(20GB at least) with type linux filesystem
+3.for separate home partion create partition with type linux home.
+4.for swap create 4GB partion with type linux swap.
+
+Step 4: Create filesystem
+use command lsblk to show the partition number.
+>> lsblk
+
+create root partition
+>> mkfs.btrfs -f /dev/sdaX (replace x with number of root partition)
+>> mount /dev/sdaX /mnt
+
+create home partition
+>> mkfs.btrfs -f /dev/sdaX
+>> mount --mkdir /dev/sdaX /mnt/home
+
+create efi partition
+>> mkfs.fat -F 32 /dev/sdaX
+
+create swap partition
+>> mkswap /dev/sdaX
+>> swapon /dev/sdaX
+

@@ -1,0 +1,38 @@
+>> sudo pacman -S curl nlohmann-json
+>> g++ -std=c++17 -O3 -march=native prayer_times.cpp -o prayer_times -lcurl
+>> mkdir -p ~/.config/waybar/scripts
+>> mv prayer_times ~/.config/waybar/scripts/
+>> ~/.config/waybar/scripts/prayer_times --city Cairo --country Egypt
+>> ~/.config/waybar/scripts/prayer_times -auto
+
+# edit waybar config config
+
+"custom/prayer": {
+  "exec": "~/.config/waybar/scripts/prayer_times",
+  "return-type": "json",
+  "interval": 60,
+  "format": "{}",
+  "tooltip": true,
+  "on-click": "~/.config/waybar/scripts/prayer_times rebuild",
+  "on-click-right": "~/.config/waybar/scripts/prayer_times fetch_missing",
+  "on-scroll-up": "~/.config/waybar/scripts/prayer_times up",
+  "on-scroll-down": "~/.config/waybar/scripts/prayer_times down",
+  "on-click-middle": "~/.config/waybar/scripts/prayer_times reset",
+  "signal": 9
+}
+
+# edit waybar style on style.css file
+
+#custom-prayer {
+    background-color: rgba(166, 227, 161, 0.15); /* Calm transparent green background */
+    color: #F9F9F9; /* Blue */
+    font-weight: bold;
+    font-size: 10px;
+    padding: 0 10px;
+    margin: 4px 4px;
+    transition: all 0.3s ease;
+}
+
+#custom-prayer:hover {
+    color: #01B0E2;
+}

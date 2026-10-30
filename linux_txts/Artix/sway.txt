@@ -1,0 +1,71 @@
+# login manager
+>> sudo pacman -S ly ly-runit # or ly-openrc
+
+## openrc
+>> rc-update add ly default # for openrc
+
+## runit
+>> ln -s /etc/runit/sv/elogind /run/runit/service/
+>> ln -s /etc/runit/sv/ly /run/runit/service/
+>> rm -rf /var/service/agetty-tty2
+
+# sway
+>> sudo pacman -S intel-ucode vulkan-intel intel-media-driver libva-intel-driver intel-gpu-tools
+
+# Sway
+>> sudo pacman -S sway swaybg waybar gtklock fnott wl-clipboard otf-font-awesome jq mailcap foot fuzzel
+>> yay -S bemoji
+
+# Essential!
+>> sudo pacman -S xorg xorg-xwayland
+
+# polkit agent
+>> sudo pacman -S polkit-gnome
+
+# Audio
+>> sudo pacman -S pulseaudio pulseaudio-alsa pulseaudio-jack pipewire pipewire-jack
+
+# Themes
+>> sudo pacman -S nwg-look qt5ct qt6ct breeze breeze-gtk
+>> echo 'export QT_QPA_PLATFORMTHEME=qt5ct' >> ~/.bashrc
+>> sudo vim /etc/environment
+QT_QPA_PLATFORMTHEME=qt5ct
+
+# xapps
+>> sudo pacman -S xarchiver unrar-free zip 7zip pcmanfm gvfs gvfs-mtp tumbler xapps xdg-desktop-portal-xapp xdg-desktop-portal-wlr
+
+Spacefm+udevil2
+
+Pcmanfm+udisk2+gvfm
+
+Thunar+volman+gvfs
+
+# clock & calendar
+>> pacman -S gsimplecal gnome-clocks
+
+# Screenshot
+>> sudo pacman -S grim flameshot
+
+# colorpicker
+>> sudo pacman -S gpick
+
+# essential tools
+>> sudo pacman -S gpicview qpdfview
+>> yay -S fsearch
+
+>> sudo pacman -S libappimage libqalculate
+
+# media
+>> sudo pacman -S mpv mpv-mpris ffmpeg ffmpegthumbnailer
+
+# Fonts
+ttf-liberation ttf-freefont ttf-dejavu
+noto-fonts noto-fonts-emoji unicode-emoji
+gnu-free-fonts
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-common
+ttf-noto-nerd
+ttf-ms-fonts
+
+# do not forget to customize bash see clitools.txt
+# do not forget to install game support see Archlinux/graphic-packages.txt

@@ -1,0 +1,7 @@
+# basic config
+
+>> nano /etc/doas.conf
+
+permit :wheel
+permit user as root
+permit persist :wheel

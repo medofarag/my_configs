@@ -1,0 +1,152 @@
+# oh my bash
+>> bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+
+# bash history enhanced features
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+export HISTCONTROL=ignoredups:erasedups
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# for syntax highlighting and command complete
+
+>> sudo pacman -S starship bat ascii fastfetch
+
+>> nano ~/.bashrc
+
+eval "$(starship init bash)"
+alias cat='bat'
+
+>> git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+>> make -C ble.sh install PREFIX=~/.local
+>> echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc
+>> source ~/.bashrc
+
+# for vi mode in bash with blerc
+>> nano ~/.blerc
+
+set -o vi
+
+# Smart navigation between files with cd
+>> sudo pacman -S zoxide
+
+>> nano ~/.bashrc
+
+alias cd='z'
+
+# find but more effecient
+>> sudo pacman -S fd
+
+# calender
+>> pacman -S when
+## Usage
+>> when i
+>> when c
+
+# tree
+>> pacman -S tree
+
+# praytimes
+
+>> pacman -S npm
+>> npm install praytime
+>> vim praytimes.js
+const { PrayTime } = require('praytime');
+ 
+const praytime = new PrayTime('Egypt');
+
+const times = praytime.utcOffset(3).location([30.5868 , 31.5026]).format('12h').getTimes();
+
+console.log(times)
+
+## usage
+>> node praytimee.js
+
+# for interactive terminal
+>> sudo pacman -S fzf
+
+# superfile for explore files on terminal
+>> sudo pacman -S superfile exiftool # for meta data plugin
+>> sudo pacman -S ttf-noto-nerd ttf-nerd-fonts-symbols-common # for show icon support
+
+# git & github
+
+>> sudo pacman -S git github-cli
+
+>> nano ~/.bashrc
+
+eval $(ssh-agent)
+
+# for advanced terminal
+
+>> sudo pacman -S zellij
+
+>> vim ~/.bashrc
+
+bash <(curl -L zellij.dev/launch)
+
+# eza for beauty ls
+
+>> sudo pacman -S eza
+
+>> vim ~/.bashrc
+
+alias ls='eza'
+
+# rg for effecient and powerfull grep
+
+>> sudo pacman -S ripgrep
+
+
+>> vim ~/.ripgreprc
+
+# Search in hidden files
+--hidden
+# Follow symbolic links
+--follow
+# Show line numbers
+--line-number
+# Smart case sensitivity
+--smart-case
+# Always show colors
+--color=always
+# Show headings for files
+--heading
+# Exclude .git directory
+--glob=!.git/
+
+>> vim ~/.bashrc
+alias grep='rg'
+
+# termial screen saver
+>> pacman -S cmatrix asciiquarium
+>> yay -S cbonsai
+
+# record terminal as obs-studio
+>> pacman -S asciinema
+
+# jrnl for taking notes in termianl
+>> pacman -S jrnl
+
+# wheather on termianl :0
+>> yay -S wttr
+
+usage
+
+>> curl wttr.in
+
+# news on terminal
+>> pacman -S newsboat
+
+# generate fake data
+>> pacman -S faker
+
+usage
+
+>> faker "datatype"
+
+#games
+
+>> yay -S nsnake
+>> yay -S nudoku
+>> yay -S myman
+

@@ -1,0 +1,15 @@
+Great suspender addon
+
+browser.cache.disk.enable --> disable
+
+browser.sessionhistory_max_total_viewers --> 2
+
+browser.cache.memory.capacity --> 512
+
+Media.autoplay.default --> 1
+
+Gfxwebrender --> true
+
+Browser.sessionstore interval --> 300000
+
+image.mem.decode_bytes_at_a_time --> 8192

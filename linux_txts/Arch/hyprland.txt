@@ -1,0 +1,6 @@
+# Hyprland + dependencies
+sudo pacman -S hyprland \
+    xdg-desktop-portal-hyprland \
+    grim slurp wl-clipboard \
+    waybar hyprlauncher \
+    kitty waylock hyprpolkitagent

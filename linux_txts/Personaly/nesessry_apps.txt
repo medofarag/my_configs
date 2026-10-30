@@ -1,0 +1,15 @@
+# nesessery apps
+
+thunar thunar-archive-plugin thunar-volman tumbler catfish
+
+fsearch flameshot mate-calc qpdfview gpicview xarchiver zip unrar 7zip libreoffice vim
+
+libappimage
+
+mpv mpv-mpris ffmpeg ffmpegthumbnailer
+
+librewolf
+
+# do not forget to customize bash see oh_my_bash.txt
+# do not forget to install searxng for private search see seerxng
+# do not forget to install game support see Archlinux/graphic-packages.txt

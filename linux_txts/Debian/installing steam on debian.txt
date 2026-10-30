@@ -1,0 +1,21 @@
+Installing Steam
+
+    Append a "contrib" component to the main line in your /etc/apt/sources.list file (see Editing software sources). For instance, on a Debian 12/Bookworm system, the line may look like this after your edit:
+
+    deb http://deb.debian.org/debian/ bookworm main contrib non-free
+
+    For amd64 (64-bit) systems, enable Multi-Arch:
+
+    # dpkg --add-architecture i386
+
+    Update the list of available packages:
+
+    # apt update
+
+    Install the steam-installer package:
+
+    # apt install steam-installer
+
+    For amd64 (64-bit) systems, additional libraries need to be installed for Vulkan and 32-bit titles:
+
+    # apt install mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386

@@ -1,0 +1,18 @@
+# After installing Nix
+>> sudo nvim /etc/init.d/nix-daemon
+#!/sbin/openrc-run
+
+name="nix-daemon"
+description="Nix Daemon"
+supervisor="supervise-daemon"
+command="/nix/var/nix/profiles/default/bin/nix-daemon"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_background=true
+
+>> sudo chmod +x /etc/init.d/nix-daemon
+>> sudo rc-update add nix-daemon default
+>> sudo rc-service nix-daemon start
+>> sudo rc-service nix-daemon status
+>> source /etc/profile.d/nix.sh
+>> nvim ~/.bashrc
+source /etc/profile.d/nix.sh

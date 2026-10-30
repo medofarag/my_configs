@@ -1,0 +1,6 @@
+Most apps: /usr/share/applications/
+Some apps: /usr/local/share/applications
+Some other apps: ~/.local/share/applications/
+Installed with Snap apps: /var/lib/snapd/desktop/applications/
+Installed with Flatpak apps: /var/lib/flatpak/exports/share/applications/
+Installed with Wine apps: ~/.local/share/applications/wine/Programs/

@@ -1,0 +1,107 @@
+1. base requirment
+
+on Arch
+>> sudo pacman -S base-devel
+
+on Debian
+>> sudo apt install build-essential cmake pkg-config python3-dev
+
+on Void
+>> sudo xbps-install -Sy base-devel cmake pkg-config python3-devel
+
+2. Cloning the Project
+
+>> cd ~
+>> git clone https://github.com/searxng/searxng.git
+>> cd searxng
+
+3. Creating the Virtual Environment
+
+>> python3 -m venv venv
+>> source venv/bin/activate
+
+4. Installing Dependencies and SearXNG
+
+First install external dependencies:
+>> pip install --upgrade pip setuptools wheel
+>> python -m pip install -r requirements.txt
+
+Then install SearXNG itself inside the virtual environment:
+
+>> python -m pip install -e . --no-build-isolation
+
+5. Configuration Backup
+>> cp searx/settings.yml searx/settings.yml.bak
+
+6. Generating the Secret Key
+
+>> KEY="$(python3 -c 'import secrets; print(secrets.token_hex(32))')" && echo "$KEY"
+
+Insert the key automatically:
+
+>> sed -i 's/^\([[:space:]]*secret_key:\).*/\1 "'"$KEY"'"/' searx/settings.yml
+
+7. Binding Only to Localhost
+
+>> sed -i '/^server:$/,/^general:$/ s/^\([[:space:]]*bind_address:\).*/\1 "127.0.0.1"/' searx/settings.yml
+
+8. Setting the Port
+
+>> sed -i '/^server:$/,/^general:$/ s/^\([[:space:]]*port:\).*/\1 8888/' searx/settings.yml
+
+9. Enabling Default Internal Settings
+
+>> grep -q '^use_default_settings:' searx/settings.yml || sed -i '1iuse_default_settings: true\n' searx/settings.yml
+
+10. Verifying Server Section
+
+>> sed -n '/^server:$/,/^general:$/p' searx/settings.yml | grep -E "bind_address|port|secret_key"
+
+11. Starting SearXNG
+
+>> cd ~/searxng
+>> source venv/bin/activate
+>> export SEARXNG_SETTINGS_PATH="$PWD/searx/settings.yml"
+>> python searx/webapp.py
+
+If you see:
+
+* Serving Flask app 'webapp'
+
+SearXNG is running.
+
+Open in browser:
+
+http://localhost:8888
+
+Making It Start Automatically
+systemd
+
+>> mkdir -p ~/.config/systemd/user
+
+----------------
+cat > ~/.config/systemd/user/searxng.service <<EOF
+[Unit]
+Description=SearXNG Local Service
+
+[Service]
+Type=simple
+WorkingDirectory=%h/searxng
+ExecStart=%h/searxng/venv/bin/python %h/searxng/searx/webapp.py
+Environment=SEARXNG_SETTINGS_PATH=%h/searxng/searx/settings.yml
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+EOF
+--------------
+
+>> systemctl --user daemon-reload
+>> systemctl --user enable --now searxng
+
+
+12. Setting Browser Search Engine
+
+In Firefox add a new search engine:
+
+http://localhost:8888/search?q=%s

@@ -1,0 +1,15 @@
+>> sudo pacman -S qemu-full virt-manager virt-viewer dnsmasq vde2 openbsd-netcat dmidecode ebtables iptables
+
+>> sudo vim /etc/libvirt/libvirtd.conf
+
+Uncomment the lines 85, 108
+
+Save and exit
+
+>> sudo usermod -aG libvirt,qemu,kvm $USER
+>> newgrp libvirt
+>> sudo systemctl --now enable libvirtd.service # for systemd
+>> lsmod | grep kvm
+>> sudo virsh net-start default
+>> sudo virsh net-autostart default
+>> reboot

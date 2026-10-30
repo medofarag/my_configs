@@ -285,7 +285,7 @@ bindsym $mod+r mode "resize"
     # bindsym PrintScreen exec flameshot full
     
     # Flamshot GUI
-    bindsym $mod+shift+x exec grim -g $(slurp)
+    bindsym $mod+shift+x exec flameshot gui
 #
 # Status Bar:
 #

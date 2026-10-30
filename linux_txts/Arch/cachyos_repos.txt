@@ -1,0 +1,45 @@
+# METHOD 1: AUTOMATIC INSTALLATION (RECOMMENDED)
+
+# 1. Download the script package
+>> curl -O https://mirror.cachyos.org/cachyos-repo.tar.xz
+
+# 2. Extract and enter the directory
+>> tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+
+# 3. Run the automatic installation script
+>> sudo ./cachyos-repo.sh
+-------------------------------------------------------------------
+
+
+# METHOD 2: MANUAL INSTALLATION
+
+>> sudo cp /etc/pacman.conf /etc/pacman.conf.bak
+
+# 1. Import the signing key
+>> sudo pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
+>> sudo pacman-key --lsign-key F3B607488DB35A47
+
+# 2. Install keyring and mirrorlist files directly via URL
+>> sudo pacman -U 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-keyring-3-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v3-mirrorlist-18-1-any.pkg.tar.zst' 'https://mirror.cachyos.org/repo/x86_64/cachyos/cachyos-v4-mirrorlist-6-1-any.pkg.tar.zst'
+
+# 3. Check CPU support level
+>> /lib/ld-linux-x86-64.so.2 --help | grep supported
+
+# If "x86-64-v4 (supported, searched)" appears, your CPU supports v4 (best performance).
+# If only "x86-64-v3" appears, you cannot use v4.
+
+# 4. Edit pacman.conf. (repos order: make cachyOS repos before arch repos). If your CPU supports v4 only, change "v3" below to "v4".
+
+[cachyos-v3]
+Include = /etc/pacman.d/cachyos-v3-mirrorlist
+
+[cachyos-core-v3]
+Include = /etc/pacman.d/cachyos-v3-mirrorlist
+
+[cachyos-extra-v3]
+Include = /etc/pacman.d/cachyos-v3-mirrorlist
+
+[cachyos]
+Include = /etc/pacman.d/cachyos-mirrorlist
+
+# After saving, sync with: sudo pacman -Syu

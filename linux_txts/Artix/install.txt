@@ -1,0 +1,106 @@
+Step 1 : partitioning your harddisk see partitioning_hard_disk.txt
+
+Step 2 : connect to the internet with iwctl and check it with ping
+
+Step 3 : Update the system clock
+
+>> rc-service ntpd start
+
+or
+
+>> sv up openntpd
+
+or
+
+>> s6-rc -u change openntpd
+
+or
+
+>> dinitctl start ntpd
+
+Step 4: install base system
+
+>> basestrap /mnt base base-devel openrc elogind-openrc linux linux-headers linux-firmware
+
+# you can replace openrc with any initsys you want such as runit , dinit , s6
+
+Step 5 : genfstab
+
+>> fstabgen -U /mnt >> /mnt/etc/fstab
+
+Step 6 : chroot
+
+>> artix-chroot /mnt # formerly artools-chroot
+
+Step 6 : Configuring the base system
+
+# Set the time zone:
+
+>> ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+
+# Run hwclock to generate /etc/adjtime:
+
+>> hwclock --systohc
+
+Step 7 : Localization
+
+Install a text editor of your choice (let's use nano here) and edit /etc/locale.gen, uncommenting the locales you desire:
+
+>> nano /etc/locale.gen
+
+Generate your desired locales running:
+
+>> locale-gen
+>> echo LANG="en_US.UTF-8" >> /etc/locale.conf
+>> export LANG="en_US.UTF-8"     # localize in your languages
+>> export LC_COLLATE="C"
+
+Step 8 : Boot Loader
+
+>> pacman -S grub os-prober efibootmgr
+>> grub-install --recheck /dev/sda                                                   # for BIOS systems
+>> grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub   # for UEFI systems
+>> grub-mkconfig -o /boot/grub/grub.cfg
+
+Step 9 : set root password with passwd command
+Step 10 : add user
+
+>> useradd -m username
+>> passwd username
+>> usermod -aG wheel,video,audio,storage username
+
+# Edit root access with visudo or nano /etc/doas.conf
+
+Step 11 : Network config
+
+>> nano /etc/hostname
+ myhostname
+
+>> nano /etc/hosts
+ 127.0.0.1        localhost
+ ::1              localhost
+ 127.0.1.1        myhostname.localdomain  myhostname
+
+# If you use OpenRC you should add your hostname to /etc/conf.d/hostname too.
+
+>> nano /etc/conf.d/hostname
+ hostname='myhostname'
+
+>> pacman -S dhcpcd
+
+Step 12 : initsys
+
+sudo pacman -S networkmanager networkmanager-runit # or any initsys
+
+OpenRC
+
+>> rc-update add NetworkManager
+
+Runit
+
+>> ln -s /etc/runit/sv/NetworkManager /etc/runit/runsvdir/default
+
+Step 13 : Reboot the system
+
+>> exit
+>> reboot

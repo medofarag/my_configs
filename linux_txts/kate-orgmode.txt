@@ -1,0 +1,23 @@
+>> git clone https://codeberg.org/akselmo/kate-orgmode.git
+>> cd kate-orgmode
+>> python -m venv .venv
+>> source .venv/bin/activate  # في لينكس/ماك
+>> pip install -r requirements.txt
+>> deactivate
+
+4. إضافة أداة خارجية لعرض جدول الأعمال (Org Agenda)
+Kate > configure kate > External Tools > Add Tool :
+
+Name: Org Agenda
+Executable:  /path/to/run-orgagenda.sh
+Working Directory: ~/path/to/yournotebookfolder.
+Output: "Display in a panel"
+
+5. (اختياري) تفعيل الإشعارات التلقائية
+إذا أردت الحصول على إشعارات سطح المكتب للمهام والمواعيد القريبة، يمكنك إضافة السكريبت run-orgnotifier.sh إلى برامج بدء التشغيل في نظام التشغيل لديك .
+اجعل السكريبت قابلاً للتنفيذ إذا لزم الأمر: `chmod +x /path/to/kate-orgmode/run-orgnotifier.sh`.
+أضف أمر تشغيل هذا الملف إلى إعدادات بدء التشغيل (Startup Applications) في بيئة سطح المكتب الخاصة بك.
+
+### ملاحظات هامة
+
+يمكنك البحث بسهولة عن العناصر بواسطة وسم معين باستخدام خاصية البحث العادية في Kate، على سبيل المثال بالبحث عن :work: .

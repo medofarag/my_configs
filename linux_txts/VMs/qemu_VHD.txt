@@ -1,0 +1,2 @@
+# create qemu virtual hard disk
+>> qemu-img create -f qcow2 file_name.qcow2 size

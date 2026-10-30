@@ -1,0 +1,87 @@
+partitioning hard disk : cfdisk , mkfs , mount
+
+Step 5: Connect to WiFi
+
+>> iwctl
+>> device list
+>> station wlan0 scan
+>> station wlan0 get-networks
+>> station wlan0 connect "Name of Network/WiFi"
+
+write password
+
+>> exit
+
+check network with this command
+
+>> ping archlinux.org
+
+
+Step 6: Install Arch Linux
+
+>> pacman -Syy
+>> pacstrap /mnt base linux linux-headers nano # or vim do not forget to install cli texteditor
+
+Step 8: Configure the installed Arch system
+
+>> genfstab -U /mnt >> /mnt/etc/fstab
+>> arch-chroot /mnt
+
+
+
+Setting Timezone
+
+for list timezones
+>> timedatectl list-timezones
+>> timedatectl set-timezone Africa/Cairo
+
+Setting up Locale
+
+>> nano /etc/locale.gen
+uncomment en_US.UTF-8
+
+>> locale-gen
+>> echo LANG=en_US.UTF-8 > /etc/locale.conf
+>> export LANG=en_US.UTF-8
+
+
+Network configuration
+
+>> echo myarch > /etc/hostname
+>> touch /etc/hosts
+
+And edit this /etc/hosts file with Vim or Nano editor to add the following lines to it (replace myarch with hostname you chose earlier):
+
+127.0.0.1   localhost
+::1     localhost
+127.0.1.1   myarch
+
+
+Set up root password
+>> passwd
+
+
+Step 8: Install Grub bootloader
+
+>> pacman -S grub efibootmgr
+>> mkdir /boot/efi
+>> mount /dev/sdaX /boot/efi
+>> grub-install --target=x86_64-efi --bootloader-id=GRUB --efi-directory=/boot/efi
+>> grub-mkconfig -o /boot/grub/grub.cfg
+
+Step 9: Create Additional user and enforce privileges
+>> pacman -S sudo
+>> useradd -m team # replace team with your username
+>> passwd team
+>> usermod -aG wheel,audio,video,storage team
+
+>> EDITOR=nano visudo
+
+uncomment this lines
+#%wheel ALL(ALL:ALL) ALL
+
+and add this line
+team ALL(ALL:ALL)ALL
+
+
+

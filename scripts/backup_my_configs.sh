@@ -1,6 +1,6 @@
 #!/run/current-system/sw/bin/bash
 cp -r /home/medo/.config/niri /home/medo/my_configs/
-cp -r /home/medo/.config/noctalia /home/medo/my_configs/
+# cp -r /home/medo/.config/noctalia /home/medo/my_configs/
 cp -r /home/medo/.config/fish /home/medo/my_configs/
 cp -r /home/medo/.config/bash /home/medo/my_configs/
 cp -r /home/medo/scripts /home/medo/my_configs/
@@ -14,6 +14,7 @@ cp -r /home/medo/.config/mpv /home/medo/my_configs/
 cp -r /home/medo/.config/omf /home/medo/my_configs/
 cp -r /home/medo/scripts /home/medo/my_configs/
 cp -r /home/medo/.config/home-manager /home/medo/my_configs/
+cp -r /home/medo/Documents/linux_txts /home/medo/my_configs/
 cp /home/medo/.bashrc /home/medo/my_configs/
 cp /home/medo/.gitconfig /home/medo/my_configs/
 

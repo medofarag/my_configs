@@ -1,0 +1,19 @@
+>> mkdir -p /boot/EFI/arch-limine
+>> cp /usr/share/limine/BOOTX64.EFI /boot/EFI/arch-limine/
+
+>> vim /boot/EFI/limine.conf
+  timeout: 5
+
+  Arch Linux
+      protocol: linux
+      kernel_path: /boot/vmlinuz-linux
+      kernel_cmdline: root=UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx rw
+      module_path: /boot/initramfs-linux.img
+
+>> efibootmgr \
+      --create \
+      --disk /dev/sdX \
+      --part Y \
+      --label "Arch Linux Limine Boot Loader" \
+      --loader '\EFI\arch-limine\BOOTX64.EFI' \
+      --unicode

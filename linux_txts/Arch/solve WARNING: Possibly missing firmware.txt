@@ -1,0 +1,51 @@
+# solve proplem "WARNING: Possibly missing firmware for module
+
+Install the linux-firmware-qlogic package
+
+sudo pacman -S linux-firmware-qlogic
+
+It will get rid of the following warnings:
+
+==> WARNING: Possibly missing firmware for module: 'qed'
+==> WARNING: Possibly missing firmware for module: 'qla1280'
+==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+
+Install the xhci_pci firmware
+
+git clone https://aur.archlinux.org/upd72020x-fw.git
+cd upd72020x-fw
+makepkg -si
+
+It will get rid of the following warning:
+
+==> WARNING: Possibly missing firmware for module: 'xhci_pci'
+
+Install the aic94xx firmware
+
+git clone https://aur.archlinux.org/aic94xx-firmware.git
+cd aic94xx-firmware
+makepkg -si
+
+It will get rid of the following warning:
+
+==> WARNING: Possibly missing firmware for module: 'aic94xx'
+
+Install the wd719x firmware
+
+git clone https://aur.archlinux.org/wd719x-firmware.git
+cd wd719x-firmware
+makepkg -si
+
+It will get rid of the following warning:
+
+==> WARNING: Possibly missing firmware for module: 'wd719x'
+
+Install the ast firmware
+
+git clone https://aur.archlinux.org/ast-firmware.git
+cd ast-firmware
+makepkg -si
+
+It will get rid of the following warning:
+
+==> WARNING: Possibly missing firmware for module: 'ast'

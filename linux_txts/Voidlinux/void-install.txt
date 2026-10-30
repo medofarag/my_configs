@@ -1,0 +1,67 @@
+connect to wifi with voidinstaller
+
+partitioning hard disk : cfdisk , mkfs , mount
+
+first : update xbps
+>> xbps-install -Su xbps
+
+>> ARCH=x86_64
+>> REPO=https://repo-default.voidlinux.org/current
+
+Copy the RSA keys from the installation medium to the target root directory:
+
+>> mkdir -p /mnt/var/db/xbps/keys
+>> cp /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
+
+>> XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" <packages>
+
+# base
+base-minimal linux
+
+# System tools
+ncurses libgcc bash file less man-pages mdocml tzdata
+
+# file system tools
+e2fsprogs btrfs-progs xfsprogs f2fs-tools dosfstools
+
+# Network tools
+openssh iproute2 iputils iw wpa_supplicant wifi-firmware dhcpcd ethtool
+
+# hardware
+void-artwork traceroute kmod acpid eudev pciutils usbutils kbd
+
+>> xgenfstab -U /mnt > /mnt/etc/fstab
+>> xchroot /mnt /bin/bash
+
+>> xbps-install -S nano
+
+Specify the hostname in /etc/hostname. Go through the options in /etc/rc.conf. If installing a glibc distribution, edit /etc/default/libc-locales, uncommenting desired locales.
+
+nvi(1) is available in the chroot, but you may wish to install your preferred text editor at this time.
+
+For glibc builds, generate locale files with:
+
+>> xbps-reconfigure -f glibc-locales
+
+
+set root password
+>> passwd
+
+installing grub
+>> xbps-install -S grub-x86_64-efi
+>> grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id="Void"
+>> grub-mkconfig -o /boot/grub/grub.cfg
+
+Finalization
+>> xbps-reconfigure -fa
+>> exit
+
+adduser
+
+>> useradd -m username
+>> passwd username
+>> usermod -aG wheel,audio,video,storage username
+setup sudo or doas and use visudo to give username root permission
+
+>> shutdown -r now
+

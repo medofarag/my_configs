@@ -1,0 +1,8 @@
+>> sudo pacman -S plasma-desktop wayland sddm sddm-kcm konsole networkmanager breeze-gtk kde-gtk-config plasma-nm plasma-pa kwayland-integration
+
+>> sudo systemctl enable NetworkManager.service
+>> sudo systemctl enable sddm.service
+
+>> sudo pacman -S mpv mpv-mpris ffmpeg ffmpegthumbnailer intel-media-sdk # do not forget to install media codecs
+
+# show nesessery apps for apps

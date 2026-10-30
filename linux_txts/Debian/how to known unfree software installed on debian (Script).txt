@@ -1,0 +1,16 @@
+#!/bin/bash
+
+find_nonfree_packages() {
+
+    installed_pkgs=$(dpkg-query -f '${Package}\n' -W)
+
+    for pkg in $installed_pkgs; do
+        section=$(dpkg-query -s "$pkg" 2>/dev/null | grep "^Section:" | cut -d: -f2 | xargs)
+
+        if [[ -n "$section" ]] && echo "$section" | grep -qE "(non-free|contrib)"; then
+            echo "$pkg (Section: $section)"
+        fi
+    done
+}
+
+find_nonfree_packages
