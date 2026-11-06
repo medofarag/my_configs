@@ -7,7 +7,8 @@ set -gx PATH $PATH unix://$XDG_RUNTIME_DIR/docker.sock
 set -gx PATH $PATH /var/lib/flatpak/exports/bin
 set -gx PATH $PATH $HOME/.local/share/flatpak/exports/bin
 
-#set -gx QT_QPA_PLATFORM qt6ct
+export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORMTHEME="qt6ct"
 
 export TERM=foot
 export EDITOR=hx

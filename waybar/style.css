@@ -20,7 +20,6 @@ window#waybar {
 
 #calendar,
 #mode,
-#battery,
 #network,
 #clock,
 #tray,
@@ -29,7 +28,6 @@ window#waybar {
 #language,
 #cpu,
 #memory,
-#temperature,
 #custom-weather,
 #custom-recorder,
 #custom-colorpick,
@@ -49,6 +47,18 @@ window#waybar {
   transition-duration: 120ms;
 }
 
+#calendar:hover,
+#network:hover,
+#clock:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#memory:hover,
+#custom-powermenu:hover,
+#pulseaudio:hover,
+#custom-prayer:hover {
+  color: #01B0E2;
+}
+
 #custom-prayer {
     background-color: rgba(166, 227, 161, 0.15); /* Calm transparent green background */
     color: #F9F9F9; /* Blue */
@@ -59,10 +69,6 @@ window#waybar {
     transition: all 0.3s ease;
 }
 
-#custom-prayer:hover {
-    color: #01B0E2;
-}
-
 #custom-powermenu {
   margin-left: 10px;
 }
@@ -70,12 +76,6 @@ window#waybar {
 #clock {
   margin-right: 10px;
   font-size: 10px;
-}
-
-#pulseaudio:hover {
-  background-image: linear-gradient(to bottom, #006994 100%);
-  color: #141216;
-  transition-duration: 120ms;
 }
 
 #tray menu {
