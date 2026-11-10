@@ -39,6 +39,15 @@ echo ${arr[0]}
 echo ${arr[4]}
 echo ${arr[@]}
 
+## Append to an Array
+
+arr=("one" "two")
+arr+=("three")
+echo "${arr[@]}"          # one two three
+
+
+
+
 # for loops
 
 # Loop through a list of values
@@ -75,7 +84,7 @@ functionname(){
 	return 0 # exit code (optional)
 }
 
-#exit code is a variable stored in ? and you can call him with $?
+# exit code is a variable stored in ? and you can call him with $?
 
 # for avoid change variable data by accident
 local variablename

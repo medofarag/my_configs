@@ -1,0 +1,19 @@
+# notify-send (tool for notify support) (libnotify-bin)
+# Note: requires a graphical session (GNOME, KDE, XFCE, etc.)
+
+# Basic usage: notify-send "title" "content"
+>> notify-send "Notification Title" "Notification content goes here"
+
+# Set urgency level (low, normal, critical)
+>> notify-send -u critical "Warning" "Disk space is almost full!"
+
+# Add an icon (file path or system icon name)
+>> notify-send -i /path/to/icon.png "Update" "File download completed"
+>> notify-send -i dialog-error "Error" "Something went wrong"
+
+# Set display duration in milliseconds (5000 = 5 seconds)
+>> notify-send -t 5000 "Alert" "This notification will disappear in 5 seconds"
+
+# Add interactive buttons (waits for user choice)
+>> notify-send -A "yes=OK" -A "no=Cancel" "Confirm" "Do you want to continue?"
+

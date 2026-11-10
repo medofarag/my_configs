@@ -22,10 +22,10 @@ set $mod Mod4
 set $term sakura
 # Your preferred application launcher
 set $menu fuzzel
-set $filemanager thunar
-set $texteditor sakura -x nvim
+set $filemanager sakura -x nnn
+set $texteditor janus
 set $emojiselector bemoji
-set $browser helium
+set $browser zen-browser
 set $screenlocker swaylock
 ### Output configuration
 #

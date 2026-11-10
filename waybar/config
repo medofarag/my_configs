@@ -11,7 +11,7 @@
     "custom/powermenu",
     "sway/workspaces",
     "sway/mode",
-    "custom/recorder",
+    // "custom/recorder",
     "custom/qrcode",
     "custom/colorpick",
     "tray"
@@ -19,12 +19,12 @@
   "modules-center": [],
   "modules-right": [
     "custom/prayer",
-    "cpu",
+    // "cpu",
     "memory",
     "network",
     "sway/language",
     "pulseaudio",
-    "custom/weather",
+    // "custom/weather",
     "clock"
   ],
   "custom/prayer": {

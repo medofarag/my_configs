@@ -47,6 +47,7 @@ window#waybar {
   transition-duration: 120ms;
 }
 
+/*
 #calendar:hover,
 #network:hover,
 #clock:hover,
@@ -58,6 +59,7 @@ window#waybar {
 #custom-prayer:hover {
   color: #01B0E2;
 }
+*/
 
 #custom-prayer {
     background-color: rgba(166, 227, 161, 0.15); /* Calm transparent green background */

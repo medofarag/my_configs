@@ -1,0 +1,86 @@
+# Cutting a Pattern from Text in Bash
+${var#pat}     # delete the shortest match from the start
+${var##pat}    # delete the tallest match from the start
+${var%pat}     # delete the shortest match from the end
+${var%%pat}    # delete the tallest match from the end
+${var/pat/}    # delete the first match 
+${var//pat/}   # delete every match
+
+
+
+
+# Appending Text to a Variable in Bash
+
+var="hello"
+var="${var} world"        # hello world
+# or
+var+=" world"             # hello world (shortcut)
+
+## Prepend Text to Every Line of a Multi-line Variable
+
+var=$'line1\nline2\nline3'
+echo "$var" | sed 's/^/PREFIX /'
+# PREFIX line1
+# PREFIX line2
+# PREFIX line3
+
+## Append Text to the End of Every Line
+
+echo "$var" | sed 's/$/ SUFFIX/'
+
+## Append Text After a Specific Word Inside the Variable
+
+var="hello world"
+var="${var/world/world and bash}"   # hello world and bash
+
+## Prepend Text Before a Specific Word
+
+var="hello world"
+var="${var/hello/greetings hello}"  # greetings hello world
+
+## Append Text to a File (Not a Variable)
+
+echo "new line" >> file.txt           # add a new line
+echo "text" >> file.txt               # add text
+printf "line1\nline2\n" >> file.txt   # add multiple lines
+
+
+var+="text" or var="${var}text"    # Append to end 
+var="text${var}"                   # Prepend to beginning 
+
+# remove lines from file
+cat file.txt | sed '3d'                    # Remove a line by its number
+cat file.txt | sed '/word/d'               # Remove a line containing a word 
+cat file.txt | sed '$d'                    # Remove the last line 
+cat file.txt | sed '2,5d'                  # Remove a range 
+cat file.txt | sed '2d;4d'                 # Remove multiple lines 
+cat file.txt | sed '/^#/d'                 # Remove lines starting with
+cat file.txt | sed '/txt$/d'               # Remove lines ending with txt
+cat file.txt | sed '/^full text$/d'        # Remove the line that exactly matches the text
+
+# some usefull commands
+touch name{1..10} # create multipaple files
+
+touch -d tommorow name # create file in specific day
+
+rmdir # like rm -r
+
+su username # Enter other username home directory as username
+
+finger username # inspect other users you need to install it.
+
+whereis program # show program directory
+
+zip "compressed file name" "files"
+
+unzip "compressed file name"
+
+cmp "file1" "file2" # is there diffrent between them
+
+diff "file1" "file2" # the different between them
+
+ip address # show ip address and network details
+
+ps -aux # show all proceses
+
+history # history of command line

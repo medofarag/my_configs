@@ -42,22 +42,6 @@ alias cd='z'
 >> when i
 >> when c
 
-# tree
->> pacman -S tree
-
-# praytimes
-
->> pacman -S npm
->> npm install praytime
->> vim praytimes.js
-const { PrayTime } = require('praytime');
- 
-const praytime = new PrayTime('Egypt');
-
-const times = praytime.utcOffset(3).location([30.5868 , 31.5026]).format('12h').getTimes();
-
-console.log(times)
-
 ## usage
 >> node praytimee.js
 
@@ -76,13 +60,9 @@ console.log(times)
 
 eval $(ssh-agent)
 
-# for advanced terminal
+# terminal multiplexer
 
->> sudo pacman -S zellij
-
->> vim ~/.bashrc
-
-bash <(curl -L zellij.dev/launch)
+>> sudo pacman -S tmux
 
 # eza for beauty ls
 
@@ -92,10 +72,17 @@ bash <(curl -L zellij.dev/launch)
 
 alias ls='eza'
 
+# timer, counter and clock on terminal
+
+>> sudo pacman -S termdown
+
 # rg for effecient and powerfull grep
 
 >> sudo pacman -S ripgrep
 
+# filemanager
+
+>> sudo pacman -S nnn
 
 >> vim ~/.ripgreprc
 
@@ -119,13 +106,9 @@ alias grep='rg'
 
 # termial screen saver
 >> pacman -S cmatrix asciiquarium
->> yay -S cbonsai
 
 # record terminal as obs-studio
 >> pacman -S asciinema
-
-# jrnl for taking notes in termianl
->> pacman -S jrnl
 
 # wheather on termianl :0
 >> yay -S wttr
