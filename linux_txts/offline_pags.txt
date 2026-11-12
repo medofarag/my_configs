@@ -1,0 +1,3 @@
+wget -r -l inf -N -k -E -p -e robots=off --wait=1 https://www.example.com/
+
+this script can downloading a full offline copy of website and update it without download it completely again
