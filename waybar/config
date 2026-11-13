@@ -42,7 +42,7 @@
   },
   "custom/powermenu": {
     "format": "⏻",
-    "on-click": "bash ~/.config/waybar/scripts/powermenu.sh"
+    "on-click": "bash ~/scripts/powermenu.sh"
   },
   "custom/recorder": {
     "format": "🎥",
@@ -50,11 +50,11 @@
   },
   "custom/qrcode": {
     "format": "🔳",
-    "on-click": "bash ~/.config/waybar/scripts/qrcode.sh"
+    "on-click": "bash ~/scripts/qrcode.sh"
   },
   "custom/colorpick":{
     "format": "🎨",
-    "on-click": "bash ~/.config/waybar/scripts/picker.sh"
+    "on-click": "bash ~/scripts/picker.sh"
   },
   "custom/weather": {
     "exec": "wttrbar",

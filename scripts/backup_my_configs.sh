@@ -15,6 +15,8 @@ cp -r /home/medo/.config/omf /home/medo/my_configs/
 cp -r /home/medo/scripts /home/medo/my_configs/
 cp -r /home/medo/.config/home-manager /home/medo/my_configs/
 cp -r /home/medo/Documents/linux_txts /home/medo/my_configs/
+cp -r /home/medo/.newsboat /home/medo/my_configs/
+cp -r /home/medo/builds/st /home/medo/my_configs/
 cp /home/medo/.bashrc /home/medo/my_configs/
 cp /home/medo/.gitconfig /home/medo/my_configs/
 

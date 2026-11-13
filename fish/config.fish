@@ -10,7 +10,7 @@ set -gx PATH $PATH $HOME/.local/share/flatpak/exports/bin
 export QT_QPA_PLATFORM="wayland;xcb"
 export QT_QPA_PLATFORMTHEME="qt6ct"
 
-export TERM=foot
+export TERM=st
 export EDITOR=hx
 export VISUAL=hx
 

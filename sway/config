@@ -18,7 +18,7 @@ exec wl-paste --type image --watch cliphist store
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Your preferred terminal emulator
-set $term sakura
+set $term st
 # Your preferred application launcher
 set $menu fuzzel
 set $filemanager thunar
@@ -257,10 +257,10 @@ bindsym $mod+r mode "resize"
 # Flameshot
 #
     # take quick screenshot
-    bindsym Print exec grim ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+    bindsym Print exec grim /home/medo/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
     
     # screenshot of a selected part of the screen
-    bindsym $mod+shift+x exec grim -g $(slurp) ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png 
+    bindsym $mod+shift+x exec bash ~/scripts/screenshot.sh 
 #
 # Status Bar:
 #
